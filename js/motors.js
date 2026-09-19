@@ -97,6 +97,7 @@ window.FINDER_DATA = {
           id: "connect",
           title: "question.connect.title",
           help: "question.connect.help",
+          image: "images/bosch-connect-module.jpg",
           options: [
             { id: "yes", label: "option.yes", mark: "✓" },
             { id: "no", label: "option.no", mark: "—" },
