@@ -207,6 +207,10 @@
     return `
       <div class="step">
         ${stepHeading("step.question.eyebrow", question.title, question.help)}
+        ${question.image ? `
+          <div class="question-visual">
+            <img src="${escapeHtml(question.image)}" alt="${escapeHtml(t(question.title))}">
+          </div>` : ""}
         <div class="card-grid">
           ${question.options.map((option) => card(option, "answer")).join("")}
         </div>

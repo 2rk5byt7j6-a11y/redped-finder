@@ -83,6 +83,17 @@ window.FINDER_DATA = {
           ]
         },
         {
+          id: "speedSensorConnector",
+          title: "question.bosch-speed-sensor.title",
+          help: "question.bosch-speed-sensor.help",
+          image: "images/bosch-smart-speed-sensor-connector.jpg",
+          visibleWhen: { answer: "magnet", equals: "unknown" },
+          options: [
+            { id: "yes", label: "option.yes", mark: "✓" },
+            { id: "no", label: "option.no", mark: "—" }
+          ]
+        },
+        {
           id: "connect",
           title: "question.connect.title",
           help: "question.connect.help",
@@ -106,9 +117,32 @@ window.FINDER_DATA = {
         },
         {
           compatible: false,
-          when: { answer: "magnet", equals: "unknown" },
-          title: "result.bosch-magnet-unknown",
-          reason: "reason.bosch-magnet-unknown"
+          when: {
+            all: [
+              { answer: "magnet", equals: "unknown" },
+              { answer: "speedSensorConnector", equals: "no" }
+            ]
+          },
+          title: "result.bosch-speed-sensor-no",
+          reason: "reason.bosch-speed-sensor-no"
+        },
+        {
+          compatible: true,
+          when: {
+            all: [
+              { answer: "magnet", equals: "unknown" },
+              { answer: "speedSensorConnector", equals: "yes" }
+            ]
+          },
+          product: {
+            name: "product.bosch.title",
+            description: "product.bosch.description",
+            image: "images/redped-bosch.svg",
+            url: "https://www.ebiketuningshop.com/products/redped-3-fuer-bosch-smart-system",
+            warnings: [
+              { text: "product.bosch.warning.software" }
+            ]
+          }
         },
         {
           compatible: true,
