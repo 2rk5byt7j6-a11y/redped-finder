@@ -44,7 +44,12 @@ window.FINDER_DATA = {
             { id: "spoke", label: "option.magnet.spoke", mark: "↗" },
             { id: "disc", label: "option.magnet.disc", mark: "◉" },
             { id: "rim", label: "option.magnet.rim", mark: "◌", notice: "notice.bosch.magnet" },
-            { id: "valve", label: "option.magnet.valve", mark: "⌁", notice: "notice.bosch.magnet" },
+            {
+              id: "valve",
+              label: "option.magnet.valve",
+              image: "images/bosch-smart-valve-magnet.jpg",
+              notice: "notice.bosch.magnet"
+            },
             { id: "abs", label: "option.magnet.abs", mark: "ABS", notice: "notice.bosch.abs" },
             { id: "unknown", label: "option.unknown", mark: "?" }
           ]
