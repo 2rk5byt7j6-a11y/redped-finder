@@ -48,6 +48,7 @@ window.FINDER_DATA = {
               id: "valve",
               label: "option.magnet.valve",
               image: "images/bosch-smart-valve-magnet.jpg",
+              imageFit: "contain",
               notice: "notice.bosch.magnet"
             },
             { id: "abs", label: "option.magnet.abs", mark: "ABS", notice: "notice.bosch.abs" },
