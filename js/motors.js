@@ -148,8 +148,8 @@ window.FINDER_DATA = {
           product: {
             name: "product.bosch.title",
             description: "product.bosch.description",
-            image: "images/redped-bosch.svg",
-            url: "https://www.ebiketuningshop.com/products/redped-3-fuer-bosch-smart-system",
+            image: "images/redped-bosch-smart-system.webp",
+            url: "https://redped.de/products/redped-fur-bosch-smart-system-bes3-tuning-e-bike-nicht-fur-ventilmagnet",
             warnings: [
               {
                 text: "product.bosch.warning.connect",
