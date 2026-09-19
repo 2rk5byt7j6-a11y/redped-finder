@@ -334,6 +334,7 @@ select:focus-visible {
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.4;
+  white-space: pre-line;
 }
 
 .choice-arrow {
