@@ -208,13 +208,15 @@ window.FINDER_DATA = {
               label: "option.bosch-system.bes2",
               image: "images/bosch-bes2-charging-plug.png",
               imageFit: "contain",
+              imageZoom: false,
               targetMotor: "bosch-gen2-gen4"
             },
             {
               id: "bes3",
               label: "option.bosch-system.bes3",
               image: "images/bosch-bes3-charging-plug.jpg",
-              imageFit: "contain"
+              imageFit: "contain",
+              imageZoom: false
             }
           ]
         },
