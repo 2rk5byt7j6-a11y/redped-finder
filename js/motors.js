@@ -34,6 +34,7 @@ window.FINDER_DATA = {
       note: "motor.bosch-smart.note",
       image: "images/bosch-smart-connectors.jpg",
       featured: true,
+      order: 2,
       questions: [
         {
           id: "magnet",
@@ -107,6 +108,7 @@ window.FINDER_DATA = {
       note: "motor.bosch-smart-gen5.note",
       image: "images/bosch-gen5-connectors.jpg",
       featured: true,
+      order: 3,
       result: {
         compatible: false,
         title: "result.bosch-smart-gen5",
@@ -120,6 +122,7 @@ window.FINDER_DATA = {
       note: "motor.bosch-gen2-gen4.note",
       image: "images/bosch-bes2-connectors.jpg",
       featured: true,
+      order: 1,
       result: {
         compatible: false,
         title: "result.bosch-gen2-gen4",
@@ -131,6 +134,7 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-unknown",
       mark: "?",
+      order: 4,
       result: {
         compatible: false,
         title: "result.bosch-unknown",
