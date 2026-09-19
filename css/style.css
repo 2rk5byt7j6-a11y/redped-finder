@@ -380,9 +380,13 @@ select:focus-visible {
 .choice-card.image-contain:not(.is-featured) img {
   grid-column: 1 / 3;
   grid-row: 2;
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: auto;
   margin-top: 12px;
+}
+
+.choice-card.no-image-zoom img {
+  cursor: pointer;
 }
 
 .choice-card.image-contain:not(.is-featured) .choice-arrow {

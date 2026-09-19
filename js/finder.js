@@ -160,7 +160,7 @@
         : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
@@ -402,7 +402,7 @@
   }
 
   content.addEventListener("click", (event) => {
-    const zoomImage = event.target.closest(".choice-card img, .result-visual img");
+    const zoomImage = event.target.closest(".choice-card:not(.no-image-zoom) img, .result-visual img");
     if (zoomImage) return openImage(zoomImage);
 
     const choice = event.target.closest("[data-choice-type]");

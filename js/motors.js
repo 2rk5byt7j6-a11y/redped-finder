@@ -45,19 +45,22 @@ window.FINDER_DATA = {
               id: "spoke",
               label: "option.magnet.spoke",
               image: "images/bosch-smart-spoke-magnet.jpg",
-              imageFit: "contain"
+              imageFit: "contain",
+              imageZoom: false
             },
             {
               id: "disc",
               label: "option.magnet.disc",
               image: "images/bosch-smart-disc-magnet.jpg",
-              imageFit: "contain"
+              imageFit: "contain",
+              imageZoom: false
             },
             {
               id: "rim",
               label: "option.magnet.rim",
               image: "images/bosch-smart-rim-magnet.jpg",
               imageFit: "contain",
+              imageZoom: false,
               notice: "notice.bosch.magnet"
             },
             {
@@ -65,6 +68,7 @@ window.FINDER_DATA = {
               label: "option.magnet.valve",
               image: "images/bosch-smart-valve-magnet.jpg",
               imageFit: "contain",
+              imageZoom: false,
               notice: "notice.bosch.magnet"
             },
             {
@@ -72,6 +76,7 @@ window.FINDER_DATA = {
               label: "option.magnet.abs",
               image: "images/bosch-smart-abs.jpg",
               imageFit: "contain",
+              imageZoom: false,
               notice: "notice.bosch.abs"
             },
             { id: "unknown", label: "option.unknown", mark: "?" }
