@@ -328,6 +328,9 @@
   function selectAnswer(id) {
     const question = currentQuestion();
     if (!question) return;
+    const option = question.options.find((item) => item.id === id);
+    if (option?.targetMotor) return selectMotor(option.targetMotor);
+
     const questions = visibleQuestions();
     const currentIndex = questions.findIndex((item) => item.id === question.id);
     const answers = { ...state.answers, [question.id]: id };

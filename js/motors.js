@@ -135,12 +135,47 @@ window.FINDER_DATA = {
       label: "motor.bosch-unknown",
       mark: "?",
       order: 4,
-      result: {
-        compatible: false,
-        title: "result.bosch-unknown",
-        reason: "reason.bosch-unknown",
-        image: "images/bosch-bes2-bes3-charging-plugs.jpg"
-      }
+      questions: [
+        {
+          id: "boschSystem",
+          title: "question.bosch-system.title",
+          help: "question.bosch-system.help",
+          options: [
+            {
+              id: "bes2",
+              label: "option.bosch-system.bes2",
+              image: "images/bosch-bes2-charging-plug.png",
+              targetMotor: "bosch-gen2-gen4"
+            },
+            {
+              id: "bes3",
+              label: "option.bosch-system.bes3",
+              image: "images/bosch-bes3-charging-plug.jpg"
+            }
+          ]
+        },
+        {
+          id: "boschBdu",
+          title: "question.bosch-bdu.title",
+          help: "question.bosch-bdu.help",
+          visibleWhen: { answer: "boschSystem", equals: "bes3" },
+          options: [
+            {
+              id: "bdu37",
+              label: "option.bosch-bdu.bdu37",
+              mark: "37",
+              targetMotor: "bosch-smart"
+            },
+            {
+              id: "bdu38",
+              label: "option.bosch-bdu.bdu38",
+              mark: "38",
+              targetMotor: "bosch-smart-gen5"
+            }
+          ]
+        }
+      ],
+      results: []
     },
     {
       id: "shimano-ep801-ep6",
