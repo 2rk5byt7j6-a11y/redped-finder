@@ -105,7 +105,8 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-smart-gen5",
       note: "motor.bosch-smart-gen5.note",
-      mark: "G5",
+      image: "images/bosch-gen5-connectors.jpg",
+      featured: true,
       result: {
         compatible: false,
         title: "result.bosch-smart-gen5",
