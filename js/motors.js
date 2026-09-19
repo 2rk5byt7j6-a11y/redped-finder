@@ -316,10 +316,20 @@ window.FINDER_DATA = {
       }
     },
     {
+      id: "shimano-e6000",
+      manufacturer: "shimano",
+      label: "motor.shimano-e6000",
+      image: "images/shimano-e6000-connectors.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      order: 4,
+      unavailable: true
+    },
+    {
       id: "shimano-ep5",
       manufacturer: "shimano",
       label: "motor.shimano-ep5",
-      order: 4,
+      order: 5,
       unavailable: true
     },
     {
@@ -327,7 +337,7 @@ window.FINDER_DATA = {
       manufacturer: "shimano",
       label: "motor.shimano-unknown",
       note: "motor.shimano-unknown.note",
-      order: 5,
+      order: 6,
       result: {
         compatible: false,
         title: "result.shimano-unknown",
@@ -339,7 +349,7 @@ window.FINDER_DATA = {
       manufacturer: "shimano",
       label: "motor.shimano-other",
       note: "motor.shimano-other.note",
-      order: 6,
+      order: 7,
       result: {
         compatible: false,
         title: "result.shimano-other",
