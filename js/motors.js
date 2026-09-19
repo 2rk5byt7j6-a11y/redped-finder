@@ -41,9 +41,25 @@ window.FINDER_DATA = {
           title: "question.magnet.title",
           help: "question.magnet.help",
           options: [
-            { id: "spoke", label: "option.magnet.spoke", mark: "↗" },
-            { id: "disc", label: "option.magnet.disc", mark: "◉" },
-            { id: "rim", label: "option.magnet.rim", mark: "◌", notice: "notice.bosch.magnet" },
+            {
+              id: "spoke",
+              label: "option.magnet.spoke",
+              image: "images/bosch-smart-spoke-magnet.jpg",
+              imageFit: "contain"
+            },
+            {
+              id: "disc",
+              label: "option.magnet.disc",
+              image: "images/bosch-smart-disc-magnet.jpg",
+              imageFit: "contain"
+            },
+            {
+              id: "rim",
+              label: "option.magnet.rim",
+              image: "images/bosch-smart-rim-magnet.jpg",
+              imageFit: "contain",
+              notice: "notice.bosch.magnet"
+            },
             {
               id: "valve",
               label: "option.magnet.valve",
