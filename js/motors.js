@@ -102,6 +102,7 @@ window.FINDER_DATA = {
       id: "bosch-gen2-gen4",
       manufacturer: "bosch",
       label: "motor.bosch-gen2-gen4",
+      note: "motor.bosch-gen2-gen4.note",
       result: {
         compatible: false,
         title: "result.bosch-gen2-gen4",
