@@ -255,7 +255,6 @@ window.FINDER_DATA = {
       label: "motor.shimano-ep8-ep5",
       image: "images/shimano-ep8-ep800-connectors.jpg",
       imageFit: "small-contain",
-      imageZoom: false,
       order: 1,
       questions: [
         {
