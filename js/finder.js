@@ -182,7 +182,7 @@
     return `
       <div class="step">
         ${stepHeading("step.motor.eyebrow", "step.motor.title", "step.motor.lead")}
-        <div class="card-grid">
+        <div class="card-grid motor-grid">
           ${motors.map((motor) => card(motor, "motor")).join("")}
         </div>
       </div>`;
