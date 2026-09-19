@@ -357,6 +357,14 @@ select:focus-visible {
   object-fit: cover;
 }
 
+.choice-card.image-contain img {
+  width: 120px;
+  height: 120px;
+  flex-basis: 120px;
+  background: white;
+  object-fit: contain;
+}
+
 .choice-copy {
   min-width: 0;
 }
