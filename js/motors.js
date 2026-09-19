@@ -31,6 +31,7 @@ window.FINDER_DATA = {
       id: "bosch-smart",
       manufacturer: "bosch",
       label: "motor.bosch-smart",
+      note: "motor.bosch-smart.note",
       questions: [
         {
           id: "magnet",
