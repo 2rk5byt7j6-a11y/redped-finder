@@ -147,7 +147,6 @@ window.FINDER_DATA = {
           },
           product: {
             name: "product.bosch.title",
-            description: "product.bosch.description",
             image: "images/redped-bosch-smart-system.webp",
             url: "https://redped.de/products/redped-fur-bosch-smart-system-bes3-tuning-e-bike-nicht-fur-ventilmagnet",
             warnings: [
