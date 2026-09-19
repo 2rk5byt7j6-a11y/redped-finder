@@ -67,7 +67,13 @@ window.FINDER_DATA = {
               imageFit: "contain",
               notice: "notice.bosch.magnet"
             },
-            { id: "abs", label: "option.magnet.abs", mark: "ABS", notice: "notice.bosch.abs" },
+            {
+              id: "abs",
+              label: "option.magnet.abs",
+              image: "images/bosch-smart-abs.jpg",
+              imageFit: "contain",
+              notice: "notice.bosch.abs"
+            },
             { id: "unknown", label: "option.unknown", mark: "?" }
           ]
         },
