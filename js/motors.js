@@ -246,6 +246,9 @@ window.FINDER_DATA = {
       id: "shimano-ep801-ep6",
       manufacturer: "shimano",
       label: "motor.shimano-ep801-ep6",
+      image: "images/shimano-ep801-ep6-connectors.jpg",
+      imageFit: "contain",
+      imageZoom: false,
       order: 2,
       questionSet: "shimano-ep6"
     },
@@ -443,6 +446,7 @@ window.FINDER_DATA = {
           id: "port",
           title: "question.port.title",
           help: "question.port.help",
+          image: "images/shimano-ep801-ep6-connectors.jpg",
           options: [
             {
               id: "open",
