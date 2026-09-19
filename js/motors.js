@@ -101,6 +101,18 @@ window.FINDER_DATA = {
       ]
     },
     {
+      id: "bosch-smart-gen5",
+      manufacturer: "bosch",
+      label: "motor.bosch-smart-gen5",
+      note: "motor.bosch-smart-gen5.note",
+      mark: "G5",
+      result: {
+        compatible: false,
+        title: "result.bosch-smart-gen5",
+        reason: "reason.bosch-smart-gen5"
+      }
+    },
+    {
       id: "bosch-gen2-gen4",
       manufacturer: "bosch",
       label: "motor.bosch-gen2-gen4",
@@ -117,7 +129,7 @@ window.FINDER_DATA = {
       id: "bosch-unknown",
       manufacturer: "bosch",
       label: "motor.bosch-unknown",
-      note: "motor.bosch-unknown.note",
+      mark: "?",
       result: {
         compatible: false,
         title: "result.bosch-unknown",
