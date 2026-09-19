@@ -130,25 +130,17 @@ window.FINDER_DATA = {
           compatible: true,
           when: {
             all: [
-              { answer: "magnet", equals: "unknown" },
-              { answer: "speedSensorConnector", equals: "yes" }
-            ]
-          },
-          product: {
-            name: "product.bosch.title",
-            description: "product.bosch.description",
-            image: "images/redped-bosch.svg",
-            url: "https://www.ebiketuningshop.com/products/redped-3-fuer-bosch-smart-system",
-            warnings: [
-              { text: "product.bosch.warning.software" }
-            ]
-          }
-        },
-        {
-          compatible: true,
-          when: {
-            all: [
-              { answer: "magnet", in: ["spoke", "disc"] },
+              {
+                any: [
+                  { answer: "magnet", in: ["spoke", "disc"] },
+                  {
+                    all: [
+                      { answer: "magnet", equals: "unknown" },
+                      { answer: "speedSensorConnector", equals: "yes" }
+                    ]
+                  }
+                ]
+              },
               { answer: "connect", in: ["yes", "no", "unknown"] }
             ]
           },
