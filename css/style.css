@@ -356,6 +356,17 @@ select:focus-visible {
   object-fit: cover;
 }
 
+.choice-card.is-featured.is-comparison {
+  grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) auto;
+}
+
+.choice-card.is-featured.is-comparison > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+}
+
 .choice-copy {
   min-width: 0;
 }
