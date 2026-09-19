@@ -154,8 +154,7 @@ window.FINDER_DATA = {
               {
                 text: "product.bosch.warning.connect",
                 when: { answer: "connect", equals: "yes" }
-              },
-              { text: "product.bosch.warning.software" }
+              }
             ]
           }
         }
