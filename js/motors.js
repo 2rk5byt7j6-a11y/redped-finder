@@ -259,6 +259,7 @@ window.FINDER_DATA = {
           id: "port",
           title: "question.port.title",
           help: "question.port.help",
+          image: "images/shimano-ep8-ep800-connectors.jpg",
           options: [
             { id: "open", label: "option.port.open", image: "images/ports/round-open.svg" },
             { id: "tab", label: "option.port.tab", image: "images/ports/round-tab.svg" },
