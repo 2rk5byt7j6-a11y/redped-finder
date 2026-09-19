@@ -105,6 +105,8 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-gen2-gen4",
       note: "motor.bosch-gen2-gen4.note",
+      image: "images/bosch-bes2-connectors.jpg",
+      featured: true,
       result: {
         compatible: false,
         title: "result.bosch-gen2-gen4",
