@@ -124,9 +124,13 @@ window.FINDER_DATA = {
       featured: true,
       order: 1,
       result: {
-        compatible: false,
-        title: "result.bosch-gen2-gen4",
-        reason: "reason.motor.pending"
+        compatible: true,
+        product: {
+          name: "product.bosch-bes2.title",
+          description: "product.bosch-bes2.description",
+          image: "images/redped-bosch.svg",
+          url: "https://redped.de/products/redped-3-fur-bosch-gen2-gen4-tuning-modul-e-bike-nicht-smart"
+        }
       }
     },
     {
