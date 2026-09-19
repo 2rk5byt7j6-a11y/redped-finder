@@ -1,13 +1,12 @@
 window.FINDER_DATA = {
   manufacturers: [
-    { id: "bosch", label: "manufacturer.bosch", note: "manufacturer.bosch.note", mark: "B" },
-    { id: "shimano", label: "manufacturer.shimano", note: "manufacturer.shimano.note", mark: "S" },
-    { id: "yamaha", label: "manufacturer.yamaha", note: "manufacturer.yamaha.note", mark: "Y" },
-    { id: "giant", label: "manufacturer.giant", note: "manufacturer.giant.note", mark: "G" },
+    { id: "bosch", label: "manufacturer.bosch", mark: "B" },
+    { id: "shimano", label: "manufacturer.shimano", mark: "S" },
+    { id: "yamaha", label: "manufacturer.yamaha", mark: "Y" },
+    { id: "giant", label: "manufacturer.giant", mark: "G" },
     {
       id: "unknown",
       label: "manufacturer.unknown",
-      note: "manufacturer.unknown.note",
       mark: "?",
       result: {
         compatible: false,
@@ -18,7 +17,6 @@ window.FINDER_DATA = {
     {
       id: "other",
       label: "manufacturer.other",
-      note: "manufacturer.other.note",
       mark: "+",
       result: {
         compatible: false,
