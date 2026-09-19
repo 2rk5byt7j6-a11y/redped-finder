@@ -7,6 +7,10 @@
   const progressList = document.querySelector("#progress-list");
   const backButton = document.querySelector("#back-button");
   const languageSelect = document.querySelector("#language-select");
+  const imageDialog = document.querySelector("#image-dialog");
+  const imageDialogImage = document.querySelector("#image-dialog-image");
+  const imageDialogCaption = document.querySelector("#image-dialog-caption");
+  const imageDialogClose = document.querySelector("[data-dialog-close]");
 
   let language = detectLanguage();
   let state = readStateFromUrl();
@@ -30,6 +34,15 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function openImage(image) {
+    const cardTitle = image.closest(".choice-card")?.querySelector(".choice-copy strong")?.textContent;
+    const caption = image.alt || cardTitle || "";
+    imageDialogImage.src = image.currentSrc || image.src;
+    imageDialogImage.alt = caption;
+    imageDialogCaption.textContent = caption;
+    imageDialog.showModal();
   }
 
   function readStateFromUrl() {
@@ -275,6 +288,7 @@
   function render() {
     document.documentElement.lang = language;
     document.title = t("page.title");
+    imageDialogClose.setAttribute("aria-label", t("actions.close"));
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       node.textContent = t(node.dataset.i18n);
     });
@@ -382,6 +396,9 @@
   }
 
   content.addEventListener("click", (event) => {
+    const zoomImage = event.target.closest(".choice-card img, .result-visual img");
+    if (zoomImage) return openImage(zoomImage);
+
     const choice = event.target.closest("[data-choice-type]");
     const action = event.target.closest("[data-action]");
     if (action?.dataset.action === "restart") return restart();
@@ -394,6 +411,10 @@
   });
 
   backButton.addEventListener("click", goBack);
+  imageDialogClose.addEventListener("click", () => imageDialog.close());
+  imageDialog.addEventListener("click", (event) => {
+    if (event.target === imageDialog) imageDialog.close();
+  });
   window.addEventListener("popstate", (event) => {
     language = detectLanguage();
     languageSelect.value = language;
