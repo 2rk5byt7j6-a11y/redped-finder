@@ -147,7 +147,7 @@
         : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
