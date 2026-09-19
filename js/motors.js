@@ -32,6 +32,7 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-smart",
       note: "motor.bosch-smart.note",
+      image: "images/bosch-smart-connectors.jpg",
       questions: [
         {
           id: "magnet",
