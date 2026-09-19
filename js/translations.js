@@ -186,7 +186,7 @@ window.TRANSLATIONS = {
     "motor.bosch-smart": "Smart System BES3 Gen4",
     "motor.bosch-smart.note": "Nicht für Gen5",
     "motor.bosch-gen2-gen4": "Gen2 bis Gen4",
-    "motor.bosch-gen2-gen4.note": "BES2 – nicht Smart",
+    "motor.bosch-gen2-gen4.note": "BES2 - nicht Smart System",
     "motor.bosch-unknown": "Ich weiß nicht",
     "motor.bosch-unknown.note": "System anhand einfacher Merkmale bestimmen",
     "motor.shimano-ep8-ep5": "Shimano EP8 und EP5",
