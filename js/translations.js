@@ -1,14 +1,14 @@
 window.TRANSLATIONS = {
   supportedLanguages: {
-    de: "Deutsch",
-    en: "English",
-    fr: "Français",
-    it: "Italiano",
-    es: "Español",
-    nl: "Nederlands",
-    pl: "Polski",
-    cs: "Čeština",
-    da: "Dansk"
+    de: "🇩🇪 Deutsch",
+    en: "🇬🇧 English",
+    fr: "🇫🇷 Français",
+    it: "🇮🇹 Italiano",
+    es: "🇪🇸 Español",
+    nl: "🇳🇱 Nederlands",
+    pl: "🇵🇱 Polski",
+    cs: "🇨🇿 Čeština",
+    da: "🇩🇰 Dansk"
   },
 
   // English is the fallback for every key that has not been translated yet.
