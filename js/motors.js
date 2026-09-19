@@ -253,6 +253,9 @@ window.FINDER_DATA = {
       id: "shimano-ep8-ep5",
       manufacturer: "shimano",
       label: "motor.shimano-ep8-ep5",
+      image: "images/shimano-ep8-ep800-connectors.jpg",
+      imageFit: "small-contain",
+      imageZoom: false,
       order: 1,
       questions: [
         {
@@ -310,11 +313,18 @@ window.FINDER_DATA = {
       }
     },
     {
+      id: "shimano-ep5",
+      manufacturer: "shimano",
+      label: "motor.shimano-ep5",
+      order: 4,
+      unavailable: true
+    },
+    {
       id: "shimano-unknown",
       manufacturer: "shimano",
       label: "motor.shimano-unknown",
       note: "motor.shimano-unknown.note",
-      order: 4,
+      order: 5,
       result: {
         compatible: false,
         title: "result.shimano-unknown",
@@ -326,7 +336,7 @@ window.FINDER_DATA = {
       manufacturer: "shimano",
       label: "motor.shimano-other",
       note: "motor.shimano-other.note",
-      order: 5,
+      order: 6,
       result: {
         compatible: false,
         title: "result.shimano-other",
