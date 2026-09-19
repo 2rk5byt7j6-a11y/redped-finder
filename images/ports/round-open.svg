@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130" role="img" aria-labelledby="title">
+  <title id="title">Runder offener Stecker</title>
+  <rect width="180" height="130" rx="18" fill="#edf3f1"/>
+  <circle cx="90" cy="65" r="40" fill="#fff" stroke="#1e3831" stroke-width="8"/>
+  <circle cx="77" cy="58" r="7" fill="#1e3831"/>
+  <circle cx="103" cy="58" r="7" fill="#1e3831"/>
+  <circle cx="90" cy="81" r="7" fill="#1e3831"/>
+  <path d="M64 35l11 11M116 35l-11 11" stroke="#1e3831" stroke-linecap="round" stroke-width="5"/>
+</svg>

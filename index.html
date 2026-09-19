@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f6">
+    <meta name="description" content="Finde das passende RedPed-Tuningmodul für dein E-Bike.">
+    <title>RedPed Motor-Finder</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RedPed Motor-Finder Startseite">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span>
+          <strong>RedPed</strong>
+          <small data-i18n="brand.finder">Motor-Finder</small>
+        </span>
+      </a>
+      <label class="language-picker">
+        <span class="sr-only" data-i18n="language.label">Sprache</span>
+        <select id="language-select" aria-label="Sprache"></select>
+      </label>
+    </header>
+
+    <main class="finder-shell">
+      <nav class="progress" aria-label="Fortschritt">
+        <ol id="progress-list"></ol>
+      </nav>
+
+      <section class="finder-panel" aria-live="polite">
+        <button class="back-button" id="back-button" type="button" hidden>
+          <span aria-hidden="true">←</span>
+          <span data-i18n="actions.back">Zurück</span>
+        </button>
+
+        <div id="finder-content"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer.legal">Tuning kann die Betriebserlaubnis deines E-Bikes beeinflussen. Beachte die Regeln in deinem Land.</p>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/motors.js"></script>
+    <script src="js/finder.js"></script>
+  </body>
+</html>

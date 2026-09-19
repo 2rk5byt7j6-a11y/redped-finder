@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130" role="img" aria-labelledby="title">
+  <title id="title">Geschlossener Stecker</title>
+  <rect width="180" height="130" rx="18" fill="#edf3f1"/>
+  <path d="M53 39h74a13 13 0 0113 13v28a13 13 0 01-13 13H53a13 13 0 01-13-13V52a13 13 0 0113-13z" fill="#fff" stroke="#1e3831" stroke-width="8"/>
+  <rect x="63" y="55" width="54" height="22" rx="5" fill="#1e3831"/>
+  <path d="M57 94v12m66-12v12" stroke="#1e3831" stroke-width="7"/>
+</svg>
