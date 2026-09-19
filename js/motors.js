@@ -118,13 +118,11 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-unknown",
       note: "motor.bosch-unknown.note",
-      image: "images/bosch-bes2-bes3-charging-plugs.jpg",
-      featured: true,
-      comparison: true,
       result: {
         compatible: false,
         title: "result.bosch-unknown",
-        reason: "reason.bosch-unknown"
+        reason: "reason.bosch-unknown",
+        image: "images/bosch-bes2-bes3-charging-plugs.jpg"
       }
     },
     {

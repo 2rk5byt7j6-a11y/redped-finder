@@ -147,7 +147,7 @@
         : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.comparison ? " is-comparison" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
@@ -206,6 +206,8 @@
     const action = compatible
       ? { label: "actions.product", url: product.url }
       : result?.action;
+    const resultImage = compatible ? product.image : result?.image;
+    const resultImageAlt = compatible ? product.name : result?.title;
     const warnings = compatible
       ? (product.warnings || []).filter((warning) => matches(warning.when))
       : [];
@@ -214,9 +216,9 @@
       <div class="step">
         <p class="eyebrow">${escapeHtml(t("step.result.eyebrow"))}</p>
         <div class="result-card">
-          ${compatible ? `
+          ${resultImage ? `
             <div class="result-visual">
-              <img src="${escapeHtml(product.image)}" alt="${escapeHtml(t(product.name))}">
+              <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">
             </div>` : ""}
           <div class="result-copy">
             <div class="status${compatible ? "" : " incompatible"}">
