@@ -221,6 +221,9 @@
       : result?.action;
     const resultImage = compatible ? product.image : result?.image;
     const resultImageAlt = compatible ? product.name : result?.title;
+    const description = compatible
+      ? product.description
+      : result?.reason || "result.unsupported.description";
     const warnings = compatible
       ? (product.warnings || []).filter((warning) => matches(warning.when))
       : [];
@@ -239,7 +242,7 @@
               ${escapeHtml(t(compatible ? "result.compatible" : "result.incompatible"))}
             </div>
             <h1>${escapeHtml(t(compatible ? product.name : result?.title || "result.unsupported.title"))}</h1>
-            <p>${escapeHtml(t(compatible ? product.description : result?.reason || "result.unsupported.description"))}</p>
+            ${description ? `<p>${escapeHtml(t(description))}</p>` : ""}
             ${warnings.length ? `
               <ul class="warning-list">
                 ${warnings.map((warning) => `<li>${escapeHtml(t(warning.text))}</li>`).join("")}

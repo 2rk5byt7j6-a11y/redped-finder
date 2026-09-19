@@ -127,7 +127,6 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.bosch-bes2.title",
-          description: "product.bosch-bes2.description",
           image: "images/redped-3-bosch-bes2.webp",
           url: "https://redped.de/products/redped-3-fur-bosch-gen2-gen4-tuning-modul-e-bike-nicht-smart"
         }
