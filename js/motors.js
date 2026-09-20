@@ -304,16 +304,14 @@ window.FINDER_DATA = {
       ]
     },
     {
-      id: "shimano-e-series",
+      id: "shimano-e6100",
       manufacturer: "shimano",
-      label: "motor.shimano-e-series",
-      note: "motor.shimano-e-series.note",
-      order: 3,
-      result: {
-        compatible: false,
-        title: "result.shimano-e-series",
-        reason: "reason.motor.pending"
-      }
+      label: "motor.shimano-e6100",
+      image: "images/shimano-e6100-connectors.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      order: 5,
+      unavailable: true
     },
     {
       id: "shimano-e8000",
@@ -322,7 +320,7 @@ window.FINDER_DATA = {
       image: "images/shimano-e8000-connectors.jpg",
       imageFit: "contain",
       imageZoom: false,
-      order: 4,
+      order: 3,
       unavailable: true
     },
     {
@@ -332,7 +330,7 @@ window.FINDER_DATA = {
       image: "images/shimano-e7000-connectors.jpg",
       imageFit: "contain",
       imageZoom: false,
-      order: 5,
+      order: 4,
       unavailable: true
     },
     {
