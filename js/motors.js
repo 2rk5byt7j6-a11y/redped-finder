@@ -284,7 +284,14 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 5,
-      unavailable: true
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-e-series.title",
+          image: "images/redped-2s-shimano-e-series.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
+        }
+      }
     },
     {
       id: "shimano-e8000",
@@ -294,7 +301,14 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 3,
-      unavailable: true
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-e-series.title",
+          image: "images/redped-2s-shimano-e-series.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
+        }
+      }
     },
     {
       id: "shimano-e7000",
@@ -304,7 +318,14 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 4,
-      unavailable: true
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-e-series.title",
+          image: "images/redped-2s-shimano-e-series.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
+        }
+      }
     },
     {
       id: "shimano-e6000",
@@ -314,7 +335,14 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 6,
-      unavailable: true
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-e-series.title",
+          image: "images/redped-2s-shimano-e-series.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
+        }
+      }
     },
     {
       id: "shimano-e5000",
@@ -324,7 +352,14 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 7,
-      unavailable: true
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-e-series.title",
+          image: "images/redped-2s-shimano-e-series.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
+        }
+      }
     },
     {
       id: "shimano-ep5",
