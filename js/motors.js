@@ -260,48 +260,16 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 1,
-      questions: [
-        {
-          id: "port",
-          title: "question.port.title",
-          help: "question.port.help",
-          image: "images/shimano-ep8-ep800-connectors.jpg",
-          options: [
-            { id: "open", label: "option.port.open", image: "images/ports/round-open.svg" },
-            { id: "tab", label: "option.port.tab", image: "images/ports/round-tab.svg" },
-            {
-              id: "closed",
-              label: "option.port.closed",
-              image: "images/ports/closed.svg",
-              notice: "notice.shimano.port"
-            },
-            {
-              id: "acc",
-              label: "option.port.acc",
-              image: "images/ports/acc.svg",
-              notice: "notice.shimano.port"
-            }
-          ]
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-ep8.title",
+          description: "product.shimano-ep8.description",
+          image: "images/redped-2s-shimano-ep8.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801",
+          warnings: [{ text: "product.shimano-ep8.warning" }]
         }
-      ],
-      results: [
-        {
-          compatible: false,
-          when: { answer: "port", in: ["closed", "acc"] },
-          reason: "reason.shimano.port"
-        },
-        {
-          compatible: true,
-          when: { answer: "port", in: ["open", "tab"] },
-          product: {
-            name: "product.shimano-ep8.title",
-            description: "product.shimano-ep8.description",
-            image: "images/redped-2s-shimano-ep8.png",
-            url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801",
-            warnings: [{ text: "product.shimano-ep8.warning" }]
-          }
-        }
-      ]
+      }
     },
     {
       id: "shimano-e6100",
