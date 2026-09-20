@@ -67,77 +67,23 @@ select {
   border: 0;
 }
 
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  padding: 16px min(5vw, 40px);
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.brand-mark {
-  display: block;
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-}
-
-.brand strong,
-.brand small {
-  display: block;
-  line-height: 1.15;
-}
-
-.brand strong {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--ink);
-}
-
-.brand small {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 0.74rem;
-}
-
-.language-picker select {
-  min-height: 44px;
-  padding: 0 35px 0 13px;
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--ink);
-  letter-spacing: 0.06em;
-  cursor: pointer;
-}
-
 .finder-shell {
   width: min(100% - 32px, 1100px);
-  margin: 28px auto 0;
+  margin: 8px auto 0;
 }
 
 .progress {
-  margin: 0 auto 14px;
+  margin: 0 auto 6px;
   overflow: hidden;
 }
 
 .progress ol {
   display: flex;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+  gap: 4px;
   margin: 0;
-  padding: 0 4px;
+  padding: 0;
   list-style: none;
   overflow-x: auto;
   scrollbar-width: none;
@@ -151,18 +97,19 @@ select {
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   color: rgba(18, 18, 18, 0.45);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.06em;
+  line-height: 1;
   white-space: nowrap;
 }
 
 .progress li:not(:last-child)::after {
   content: "›";
   color: rgba(18, 18, 18, 0.28);
-  font-size: 1.15rem;
+  font-size: 0.95rem;
 }
 
 .progress li.is-active,
@@ -172,13 +119,14 @@ select {
 
 .step-dot {
   display: grid;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--surface);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
+  line-height: 1;
 }
 
 .is-active .step-dot {
@@ -195,7 +143,7 @@ select {
 
 .finder-panel {
   min-height: 480px;
-  padding: 24px 0 48px;
+  padding: 8px 0 48px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -710,25 +658,17 @@ select:focus-visible {
 }
 
 @media (min-width: 620px) {
-  .site-header {
-    padding: 18px min(5vw, 48px);
-  }
-
   .finder-shell {
-    margin-top: 36px;
-  }
-
-  .progress ol {
-    justify-content: center;
+    margin-top: 10px;
   }
 
   .progress li {
-    font-size: 0.8rem;
+    font-size: 0.74rem;
   }
 
   .finder-panel {
     min-height: 520px;
-    padding: 36px 0 64px;
+    padding: 10px 0 64px;
     border-radius: 0;
   }
 

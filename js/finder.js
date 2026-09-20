@@ -175,7 +175,7 @@
 
   function stepHeading(eyebrow, title, lead) {
     return `
-      <p class="eyebrow">${escapeHtml(t(eyebrow))}</p>
+      ${eyebrow ? `<p class="eyebrow">${escapeHtml(t(eyebrow))}</p>` : ""}
       <h1>${escapeHtml(t(title))}</h1>
       ${lead ? `<p class="lead">${escapeHtml(t(lead))}</p>` : ""}`;
   }
@@ -183,7 +183,7 @@
   function renderManufacturer() {
     return `
       <div class="step">
-        ${stepHeading("step.manufacturer.eyebrow", "step.manufacturer.title", "step.manufacturer.lead")}
+        ${stepHeading(null, "step.manufacturer.title")}
         <div class="card-grid">
           ${data.manufacturers.map((manufacturer) => card(manufacturer, "manufacturer")).join("")}
         </div>
@@ -196,7 +196,7 @@
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     return `
       <div class="step">
-        ${state.manufacturer === "bosch" ? "" : stepHeading("step.motor.eyebrow", "step.motor.title", "step.motor.lead")}
+        ${stepHeading(null, "step.motor.title")}
         <div class="card-grid motor-grid">
           ${motors.map((motor) => card(motor, "motor")).join("")}
         </div>
@@ -208,7 +208,7 @@
     if (!question) return renderResult(data.fallbackResult);
     return `
       <div class="step">
-        ${stepHeading("step.question.eyebrow", question.title, question.help)}
+        ${stepHeading(null, question.title, question.help)}
         ${question.image ? `
           <div class="question-visual">
             <img src="${escapeHtml(question.image)}" alt="${escapeHtml(t(question.title))}">
@@ -236,7 +236,6 @@
 
     return `
       <div class="step">
-        <p class="eyebrow">${escapeHtml(t("step.result.eyebrow"))}</p>
         <div class="result-card">
           ${resultImage ? `
             <div class="result-visual">
@@ -400,6 +399,7 @@
   }
 
   function setupLanguageSelect() {
+    if (!languageSelect) return;
     languageSelect.innerHTML = Object.entries(translations.supportedLanguages)
       .map(([code, label]) => `<option value="${code}">${escapeHtml(label)}</option>`)
       .join("");
@@ -433,7 +433,7 @@
   });
   window.addEventListener("popstate", (event) => {
     language = detectLanguage();
-    languageSelect.value = language;
+    if (languageSelect) languageSelect.value = language;
     state = readStateFromUrl();
     depth = event.state?.finderDepth || 0;
     render();
