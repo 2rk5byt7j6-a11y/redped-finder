@@ -60,7 +60,7 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-smart",
       note: "motor.bosch-smart.note",
-      image: "images/bosch-smart-connectors.jpg",
+      image: "images/bosch-smart-connectors.webp",
       imageFit: "contain",
       imageSize: "medium",
       imageZoom: false,
@@ -73,21 +73,21 @@ window.FINDER_DATA = {
             {
               id: "spoke",
               label: "option.magnet.spoke",
-              image: "images/bosch-smart-spoke-magnet.jpg",
+              image: "images/bosch-smart-spoke-magnet.webp",
               imageFit: "contain",
               imageZoom: false
             },
             {
               id: "disc",
               label: "option.magnet.disc",
-              image: "images/bosch-smart-disc-magnet.jpg",
+              image: "images/bosch-smart-disc-magnet.webp",
               imageFit: "contain",
               imageZoom: false
             },
             {
               id: "rim",
               label: "option.magnet.rim",
-              image: "images/bosch-smart-rim-magnet.jpg",
+              image: "images/bosch-smart-rim-magnet.webp",
               imageFit: "contain",
               imageZoom: false,
               notice: "notice.bosch.magnet"
@@ -95,7 +95,7 @@ window.FINDER_DATA = {
             {
               id: "valve",
               label: "option.magnet.valve",
-              image: "images/bosch-smart-valve-magnet.jpg",
+              image: "images/bosch-smart-valve-magnet.webp",
               imageFit: "contain",
               imageZoom: false,
               notice: "notice.bosch.magnet"
@@ -103,7 +103,7 @@ window.FINDER_DATA = {
             {
               id: "abs",
               label: "option.magnet.abs",
-              image: "images/bosch-smart-abs.jpg",
+              image: "images/bosch-smart-abs.webp",
               imageFit: "contain",
               imageZoom: false,
               notice: "notice.bosch.abs"
@@ -115,7 +115,7 @@ window.FINDER_DATA = {
           id: "speedSensorConnector",
           title: "question.bosch-speed-sensor.title",
           help: "question.bosch-speed-sensor.help",
-          image: "images/bosch-smart-speed-sensor-connector.jpg",
+          image: "images/bosch-smart-speed-sensor-connector.webp",
           visibleWhen: { answer: "magnet", equals: "unknown" },
           options: [
             { id: "yes", label: "option.yes", mark: "✓" },
@@ -126,7 +126,7 @@ window.FINDER_DATA = {
           id: "connect",
           title: "question.connect.title",
           help: "question.connect.help",
-          image: "images/bosch-connect-module.jpg",
+          image: "images/bosch-connect-module.webp",
           options: [
             { id: "yes", label: "option.yes", mark: "✓" },
             { id: "no", label: "option.no", mark: "—" },
@@ -193,7 +193,7 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-smart-gen5",
       note: "motor.bosch-smart-gen5.note",
-      image: "images/bosch-gen5-connectors.jpg",
+      image: "images/bosch-gen5-connectors.webp",
       imageFit: "contain",
       imageSize: "medium",
       imageZoom: false,
@@ -209,7 +209,7 @@ window.FINDER_DATA = {
       manufacturer: "bosch",
       label: "motor.bosch-gen2-gen4",
       note: "motor.bosch-gen2-gen4.note",
-      image: "images/bosch-bes2-connectors.jpg",
+      image: "images/bosch-bes2-connectors.webp",
       imageFit: "contain",
       imageSize: "medium",
       imageZoom: false,
@@ -238,7 +238,7 @@ window.FINDER_DATA = {
             {
               id: "bes2",
               label: "option.bosch-system.bes2",
-              image: "images/bosch-bes2-charging-plug.png",
+              image: "images/bosch-bes2-charging-plug.webp",
               imageFit: "contain",
               imageZoom: false,
               targetMotor: "bosch-gen2-gen4"
@@ -246,7 +246,7 @@ window.FINDER_DATA = {
             {
               id: "bes3",
               label: "option.bosch-system.bes3",
-              image: "images/bosch-bes3-charging-plug.jpg",
+              image: "images/bosch-bes3-charging-plug.webp",
               imageFit: "contain",
               imageZoom: false
             }
@@ -279,7 +279,7 @@ window.FINDER_DATA = {
       id: "shimano-ep801-ep6",
       manufacturer: "shimano",
       label: "motor.shimano-ep801-ep6",
-      image: "images/shimano-ep801-ep6-connectors.jpg",
+      image: "images/shimano-ep801-ep6-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 2,
@@ -287,7 +287,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-ep6.title",
-          image: "images/redped-2s-shimano-ep801-ep6.png",
+          image: "images/redped-2s-shimano-ep801-ep6.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-ep6-ep801-tuning-modul-e-bike"
         }
       }
@@ -296,7 +296,7 @@ window.FINDER_DATA = {
       id: "shimano-ep8-ep5",
       manufacturer: "shimano",
       label: "motor.shimano-ep8-ep5",
-      image: "images/shimano-ep8-ep800-connectors.jpg",
+      image: "images/shimano-ep8-ep800-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 1,
@@ -304,7 +304,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-ep8.title",
-          image: "images/redped-2s-shimano-ep8.png",
+          image: "images/redped-2s-shimano-ep8.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801"
         }
       }
@@ -313,7 +313,7 @@ window.FINDER_DATA = {
       id: "shimano-e6100",
       manufacturer: "shimano",
       label: "motor.shimano-e6100",
-      image: "images/shimano-e6100-connectors.jpg",
+      image: "images/shimano-e6100-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 5,
@@ -321,7 +321,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-e-series.title",
-          image: "images/redped-2s-shimano-e-series.png",
+          image: "images/redped-2s-shimano-e-series.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
         }
       }
@@ -330,7 +330,7 @@ window.FINDER_DATA = {
       id: "shimano-e8000",
       manufacturer: "shimano",
       label: "motor.shimano-e8000",
-      image: "images/shimano-e8000-connectors.jpg",
+      image: "images/shimano-e8000-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 3,
@@ -338,7 +338,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-e-series.title",
-          image: "images/redped-2s-shimano-e-series.png",
+          image: "images/redped-2s-shimano-e-series.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
         }
       }
@@ -347,7 +347,7 @@ window.FINDER_DATA = {
       id: "shimano-e7000",
       manufacturer: "shimano",
       label: "motor.shimano-e7000",
-      image: "images/shimano-e7000-connectors.jpg",
+      image: "images/shimano-e7000-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 4,
@@ -355,7 +355,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-e-series.title",
-          image: "images/redped-2s-shimano-e-series.png",
+          image: "images/redped-2s-shimano-e-series.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
         }
       }
@@ -364,7 +364,7 @@ window.FINDER_DATA = {
       id: "shimano-e6000",
       manufacturer: "shimano",
       label: "motor.shimano-e6000",
-      image: "images/shimano-e6000-connectors.jpg",
+      image: "images/shimano-e6000-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 6,
@@ -372,7 +372,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-e-series.title",
-          image: "images/redped-2s-shimano-e-series.png",
+          image: "images/redped-2s-shimano-e-series.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
         }
       }
@@ -381,7 +381,7 @@ window.FINDER_DATA = {
       id: "shimano-e5000",
       manufacturer: "shimano",
       label: "motor.shimano-e5000",
-      image: "images/shimano-e5000-connectors.jpg",
+      image: "images/shimano-e5000-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 7,
@@ -389,7 +389,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-e-series.title",
-          image: "images/redped-2s-shimano-e-series.png",
+          image: "images/redped-2s-shimano-e-series.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-e8000-e7000-e6100-e6000-e5000-tuning-e-bike"
         }
       }
@@ -398,7 +398,7 @@ window.FINDER_DATA = {
       id: "shimano-ep5",
       manufacturer: "shimano",
       label: "motor.shimano-ep5",
-      image: "images/shimano-ep5-connectors.jpg",
+      image: "images/shimano-ep5-connectors.webp",
       imageFit: "contain",
       imageZoom: false,
       order: 8,
@@ -406,7 +406,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-ep8.title",
-          image: "images/redped-2s-shimano-ep8.png",
+          image: "images/redped-2s-shimano-ep8.webp",
           url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801"
         }
       }
@@ -430,7 +430,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-x",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-x",
-      image: "images/yamaha-pw-x.jpg",
+      image: "images/yamaha-pw-x.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -439,7 +439,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -449,7 +449,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-x2",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-x2",
-      image: "images/yamaha-pw-x2.jpg",
+      image: "images/yamaha-pw-x2.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -458,7 +458,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -468,7 +468,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-x3",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-x3",
-      image: "images/yamaha-pw-x3.jpg",
+      image: "images/yamaha-pw-x3.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -477,7 +477,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-x3.title",
-          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-x3.warning" }]
         }
@@ -487,7 +487,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-xm",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-xm",
-      image: "images/yamaha-pw-xm.jpg",
+      image: "images/yamaha-pw-xm.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -496,7 +496,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-x3.title",
-          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-x3.warning" }]
         }
@@ -506,7 +506,7 @@ window.FINDER_DATA = {
       id: "yamaha-air-drive",
       manufacturer: "yamaha",
       label: "motor.yamaha-air-drive",
-      image: "images/yamaha-air-drive.jpg",
+      image: "images/yamaha-air-drive.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -515,7 +515,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -525,7 +525,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-te",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-te",
-      image: "images/yamaha-pw-te.jpg",
+      image: "images/yamaha-pw-te.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -534,7 +534,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -544,7 +544,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-ce",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-ce",
-      image: "images/yamaha-pw-ce.jpg",
+      image: "images/yamaha-pw-ce.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -553,7 +553,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -563,7 +563,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-se",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-se",
-      image: "images/yamaha-pw-se.jpg",
+      image: "images/yamaha-pw-se.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -572,7 +572,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -582,7 +582,7 @@ window.FINDER_DATA = {
       id: "yamaha-pw-st",
       manufacturer: "yamaha",
       label: "motor.yamaha-pw-st",
-      image: "images/yamaha-pw-st.jpg",
+      image: "images/yamaha-pw-st.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -591,7 +591,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-series.title",
-          image: "images/redped-3-yamaha-pw-series.png",
+          image: "images/redped-3-yamaha-pw-series.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-series.warning" }]
         }
@@ -601,7 +601,7 @@ window.FINDER_DATA = {
       id: "yamaha-current",
       manufacturer: "yamaha",
       label: "motor.yamaha-current",
-      image: "images/yamaha-pw-s2.jpg",
+      image: "images/yamaha-pw-s2.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -610,7 +610,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.yamaha-pw-x3.title",
-          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.webp",
           url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
           warnings: [{ text: "product.yamaha-pw-x3.warning" }]
         }
@@ -631,7 +631,7 @@ window.FINDER_DATA = {
             {
               id: "pw-x3",
               label: "option.yamaha-connector.pw-x3",
-              image: "images/yamaha-pw-x3-connectors.jpg",
+              image: "images/yamaha-pw-x3-connectors.webp",
               imageFit: "contain",
               imageZoom: false,
               hideLabel: true,
@@ -640,7 +640,7 @@ window.FINDER_DATA = {
             {
               id: "pw-x",
               label: "option.yamaha-connector.pw-x",
-              image: "images/yamaha-pw-x-connectors.jpg",
+              image: "images/yamaha-pw-x-connectors.webp",
               imageFit: "contain",
               imageZoom: false,
               hideLabel: true,
@@ -655,7 +655,7 @@ window.FINDER_DATA = {
       id: "giant-pro",
       manufacturer: "giant",
       label: "motor.giant-pro",
-      image: "images/giant-syncdrive-pro.jpg",
+      image: "images/giant-syncdrive-pro.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -664,7 +664,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.giant-syncdrive.title",
-          image: "images/redped-3-giant-syncdrive.png",
+          image: "images/redped-3-giant-syncdrive.webp",
           url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
         }
       }
@@ -673,7 +673,7 @@ window.FINDER_DATA = {
       id: "giant-sport",
       manufacturer: "giant",
       label: "motor.giant-sport",
-      image: "images/giant-syncdrive-sport.jpg",
+      image: "images/giant-syncdrive-sport.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -682,7 +682,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.giant-syncdrive.title",
-          image: "images/redped-3-giant-syncdrive.png",
+          image: "images/redped-3-giant-syncdrive.webp",
           url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
         }
       }
@@ -691,7 +691,7 @@ window.FINDER_DATA = {
       id: "giant-life",
       manufacturer: "giant",
       label: "motor.giant-life",
-      image: "images/giant-syncdrive-life.jpg",
+      image: "images/giant-syncdrive-life.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -700,7 +700,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.giant-syncdrive.title",
-          image: "images/redped-3-giant-syncdrive.png",
+          image: "images/redped-3-giant-syncdrive.webp",
           url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
         }
       }
@@ -709,7 +709,7 @@ window.FINDER_DATA = {
       id: "giant-core",
       manufacturer: "giant",
       label: "motor.giant-core",
-      image: "images/giant-syncdrive-core.jpg",
+      image: "images/giant-syncdrive-core.webp",
       imageFit: "contain",
       imageZoom: false,
       hideLabel: true,
@@ -718,7 +718,7 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.giant-syncdrive.title",
-          image: "images/redped-3-giant-syncdrive.png",
+          image: "images/redped-3-giant-syncdrive.webp",
           url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
         }
       }
@@ -738,7 +738,7 @@ window.FINDER_DATA = {
             {
               id: "sport",
               label: "option.giant-connector.sport",
-              image: "images/giant-syncdrive-sport-connectors.jpg",
+              image: "images/giant-syncdrive-sport-connectors.webp",
               imageFit: "contain",
               imageZoom: false,
               hideLabel: true,
@@ -747,7 +747,7 @@ window.FINDER_DATA = {
             {
               id: "sport2",
               label: "option.giant-connector.sport2",
-              image: "images/giant-syncdrive-sport2-connectors.jpg",
+              image: "images/giant-syncdrive-sport2-connectors.webp",
               imageFit: "contain",
               imageZoom: false,
               hideLabel: true
@@ -783,7 +783,7 @@ window.FINDER_DATA = {
           id: "port",
           title: "question.port.title",
           help: "question.port.help",
-          image: "images/shimano-ep801-ep6-connectors.jpg",
+          image: "images/shimano-ep801-ep6-connectors.webp",
           options: [
             {
               id: "open",
