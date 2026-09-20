@@ -3,28 +3,28 @@ window.FINDER_DATA = {
     {
       id: "bosch",
       label: "manufacturer.bosch",
-      image: "images/manufacturers/bosch.svg",
+      image: "images/manufacturers/bosch.svg?v=2",
       imageFit: "small-contain",
       imageZoom: false
     },
     {
       id: "shimano",
       label: "manufacturer.shimano",
-      image: "images/manufacturers/shimano.svg",
+      image: "images/manufacturers/shimano.svg?v=2",
       imageFit: "small-contain",
       imageZoom: false
     },
     {
       id: "yamaha",
       label: "manufacturer.yamaha",
-      image: "images/manufacturers/yamaha.svg",
+      image: "images/manufacturers/yamaha.svg?v=2",
       imageFit: "small-contain",
       imageZoom: false
     },
     {
       id: "giant",
       label: "manufacturer.giant",
-      image: "images/manufacturers/giant.svg",
+      image: "images/manufacturers/giant.svg?v=2",
       imageFit: "small-contain",
       imageZoom: false
     },
