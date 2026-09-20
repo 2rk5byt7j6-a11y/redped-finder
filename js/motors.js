@@ -359,6 +359,9 @@ window.FINDER_DATA = {
       id: "shimano-ep5",
       manufacturer: "shimano",
       label: "motor.shimano-ep5",
+      image: "images/shimano-ep5-connectors.jpg",
+      imageFit: "contain",
+      imageZoom: false,
       order: 8,
       unavailable: true
     },
