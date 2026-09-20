@@ -4,29 +4,33 @@ window.FINDER_DATA = {
       id: "bosch",
       label: "manufacturer.bosch",
       image: "images/manufacturers/bosch.svg?v=2",
-      imageFit: "small-contain",
-      imageZoom: false
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true
     },
     {
       id: "shimano",
       label: "manufacturer.shimano",
       image: "images/manufacturers/shimano.svg?v=2",
-      imageFit: "small-contain",
-      imageZoom: false
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true
     },
     {
       id: "yamaha",
       label: "manufacturer.yamaha",
       image: "images/manufacturers/yamaha.svg?v=2",
-      imageFit: "small-contain",
-      imageZoom: false
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true
     },
     {
       id: "giant",
       label: "manufacturer.giant",
       image: "images/manufacturers/giant.svg?v=2",
-      imageFit: "small-contain",
-      imageZoom: false
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true
     },
     {
       id: "unknown",
@@ -611,6 +615,7 @@ window.FINDER_DATA = {
       id: "yamaha-unknown",
       manufacturer: "yamaha",
       label: "motor.yamaha-unknown",
+      mark: "?",
       order: 11,
       questions: [
         {
@@ -645,47 +650,118 @@ window.FINDER_DATA = {
       id: "giant-pro",
       manufacturer: "giant",
       label: "motor.giant-pro",
+      image: "images/giant-syncdrive-pro.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
       order: 1,
-      result: { compatible: false, reason: "reason.motor.pending" }
+      result: {
+        compatible: true,
+        product: {
+          name: "product.giant-syncdrive.title",
+          image: "images/redped-3-giant-syncdrive.png",
+          url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
+        }
+      }
     },
     {
       id: "giant-sport",
       manufacturer: "giant",
       label: "motor.giant-sport",
+      image: "images/giant-syncdrive-sport.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
       order: 2,
-      result: { compatible: false, reason: "reason.motor.pending" }
+      result: {
+        compatible: true,
+        product: {
+          name: "product.giant-syncdrive.title",
+          image: "images/redped-3-giant-syncdrive.png",
+          url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
+        }
+      }
     },
     {
       id: "giant-life",
       manufacturer: "giant",
       label: "motor.giant-life",
+      image: "images/giant-syncdrive-life.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
       order: 3,
-      result: { compatible: false, reason: "reason.motor.pending" }
+      result: {
+        compatible: true,
+        product: {
+          name: "product.giant-syncdrive.title",
+          image: "images/redped-3-giant-syncdrive.png",
+          url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
+        }
+      }
     },
     {
       id: "giant-core",
       manufacturer: "giant",
       label: "motor.giant-core",
+      image: "images/giant-syncdrive-core.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
       order: 4,
-      result: { compatible: false, reason: "reason.motor.pending" }
+      result: {
+        compatible: true,
+        product: {
+          name: "product.giant-syncdrive.title",
+          image: "images/redped-3-giant-syncdrive.png",
+          url: "https://redped.de/products/redped-3-fur-giant-syncdrive-pro-sport-life-core-tuning-e-bike"
+        }
+      }
     },
     {
       id: "giant-unknown",
       manufacturer: "giant",
       label: "motor.giant-unknown",
-      note: "motor.giant-unknown.note",
+      mark: "?",
       order: 5,
-      result: {
-        compatible: false,
-        title: "result.giant-unknown",
-        reason: "reason.giant-unknown"
-      }
+      questions: [
+        {
+          id: "giantConnector",
+          title: "question.giant-connector.title",
+          help: "question.giant-connector.help",
+          options: [
+            {
+              id: "sport",
+              label: "option.giant-connector.sport",
+              image: "images/giant-syncdrive-sport-connectors.jpg",
+              imageFit: "contain",
+              imageZoom: false,
+              hideLabel: true,
+              targetMotor: "giant-sport"
+            },
+            {
+              id: "sport2",
+              label: "option.giant-connector.sport2",
+              image: "images/giant-syncdrive-sport2-connectors.jpg",
+              imageFit: "contain",
+              imageZoom: false,
+              hideLabel: true
+            }
+          ]
+        }
+      ],
+      results: [
+        {
+          compatible: false,
+          when: { answer: "giantConnector", equals: "sport2" },
+          title: "result.giant-sport2"
+        }
+      ]
     },
     {
       id: "giant-other",
       manufacturer: "giant",
       label: "motor.giant-other",
-      note: "motor.giant-other.note",
       order: 6,
       result: {
         compatible: false,

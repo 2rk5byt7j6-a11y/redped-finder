@@ -426,6 +426,32 @@ select:focus-visible {
   transform: translateY(-50%);
 }
 
+.choice-card.logo-card {
+  min-height: 72px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.choice-card.logo-card.image-contain:not(.is-featured) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-card.logo-card .choice-copy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.choice-card.logo-card.image-contain.hide-label:not(.is-featured) img {
+  width: min(200px, 70%);
+  max-height: 44px;
+  margin: 0;
+  flex: none;
+}
+
 .choice-copy {
   min-width: 0;
 }
@@ -637,15 +663,6 @@ select:focus-visible {
   border: 1px solid var(--line);
   background: white;
   color: var(--ink);
-}
-
-.site-footer {
-  width: min(100% - 40px, 760px);
-  margin: 25px auto;
-  color: #7c8985;
-  font-size: 0.72rem;
-  line-height: 1.5;
-  text-align: center;
 }
 
 @media (min-width: 620px) {

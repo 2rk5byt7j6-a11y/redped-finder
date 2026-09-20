@@ -158,7 +158,7 @@
       : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}${type === "manufacturer" && item.image ? " logo-card" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
@@ -218,14 +218,14 @@
   function renderResult(result) {
     const compatible = Boolean(result?.compatible && result.product);
     const product = result?.product;
-    const action = compatible
+    const action = compatible && product.url
       ? { label: "actions.product", url: product.url }
       : result?.action;
     const resultImage = compatible ? product.image : result?.image;
     const resultImageAlt = compatible ? product.name : result?.title;
     const description = compatible
       ? product.description
-      : result?.reason || "result.unsupported.description";
+      : result?.reason;
     const warnings = compatible
       ? (product.warnings || []).filter((warning) => matches(warning.when))
       : [];
