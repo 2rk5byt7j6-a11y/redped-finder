@@ -158,11 +158,11 @@
       : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
-          <strong>${escapeHtml(t(item.label))}</strong>
+          <strong${item.hideLabel ? ' class="sr-only"' : ""}>${escapeHtml(t(item.label))}</strong>
           ${note}
         </span>
         <span class="choice-arrow" aria-hidden="true">›</span>

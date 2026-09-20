@@ -414,6 +414,18 @@ select:focus-visible {
   grid-row: 1;
 }
 
+.choice-card.image-contain.hide-label:not(.is-featured) img {
+  grid-row: 1;
+  margin-top: 0;
+}
+
+.choice-card.image-contain.hide-label:not(.is-featured) .choice-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .choice-copy {
   min-width: 0;
 }

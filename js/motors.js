@@ -403,21 +403,10 @@ window.FINDER_DATA = {
       }
     },
     {
-      id: "shimano-unknown",
-      manufacturer: "shimano",
-      label: "motor.shimano-unknown",
-      order: 9,
-      result: {
-        compatible: false,
-        title: "result.shimano-unknown",
-        reason: "reason.shimano-unknown"
-      }
-    },
-    {
       id: "shimano-other",
       manufacturer: "shimano",
       label: "motor.shimano-other",
-      order: 10,
+      order: 9,
       result: {
         compatible: false,
         title: "result.shimano-other",
@@ -429,39 +418,228 @@ window.FINDER_DATA = {
       }
     },
     {
-      id: "yamaha-classic",
+      id: "yamaha-pw-x",
       manufacturer: "yamaha",
-      label: "motor.yamaha-classic",
-      note: "motor.yamaha-classic.note",
+      label: "motor.yamaha-pw-x",
+      image: "images/yamaha-pw-x.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 5,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-x2",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-x2",
+      image: "images/yamaha-pw-x2.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 4,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-x3",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-x3",
+      image: "images/yamaha-pw-x3.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 2,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-x3.title",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-x3.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-xm",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-xm",
+      image: "images/yamaha-pw-xm.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 9,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-x3.title",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-x3.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-air-drive",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-air-drive",
+      image: "images/yamaha-air-drive.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 10,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-te",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-te",
+      image: "images/yamaha-pw-te.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 6,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-ce",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-ce",
+      image: "images/yamaha-pw-ce.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 7,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-se",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-se",
+      image: "images/yamaha-pw-se.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 8,
+      result: {
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
+      }
+    },
+    {
+      id: "yamaha-pw-st",
+      manufacturer: "yamaha",
+      label: "motor.yamaha-pw-st",
+      image: "images/yamaha-pw-st.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
       order: 1,
       result: {
-        compatible: false,
-        title: "result.yamaha-classic",
-        reason: "reason.motor.pending"
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-series.title",
+          image: "images/redped-3-yamaha-pw-series.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x-pw-x2-pw-st-pw-se-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-series.warning" }]
+        }
       }
     },
     {
       id: "yamaha-current",
       manufacturer: "yamaha",
       label: "motor.yamaha-current",
-      order: 2,
+      image: "images/yamaha-pw-s2.jpg",
+      imageFit: "contain",
+      imageZoom: false,
+      hideLabel: true,
+      order: 3,
       result: {
-        compatible: false,
-        title: "result.yamaha-current",
-        reason: "reason.motor.pending"
+        compatible: true,
+        product: {
+          name: "product.yamaha-pw-x3.title",
+          image: "images/redped-3-yamaha-pw-x3-pw-s2.png",
+          url: "https://redped.de/products/redped-3-fur-pw-x3-pw-s2-yamaha-tuning-e-bike",
+          warnings: [{ text: "product.yamaha-pw-x3.warning" }]
+        }
       }
     },
     {
       id: "yamaha-unknown",
       manufacturer: "yamaha",
       label: "motor.yamaha-unknown",
-      note: "motor.yamaha-unknown.note",
-      order: 3,
-      result: {
-        compatible: false,
-        title: "result.yamaha-unknown",
-        reason: "reason.yamaha-unknown"
-      }
+      order: 11,
+      questions: [
+        {
+          id: "yamahaConnector",
+          title: "question.yamaha-connector.title",
+          help: "question.yamaha-connector.help",
+          options: [
+            {
+              id: "pw-x3",
+              label: "option.yamaha-connector.pw-x3",
+              image: "images/yamaha-pw-x3-connectors.jpg",
+              imageFit: "contain",
+              imageZoom: false,
+              hideLabel: true,
+              targetMotor: "yamaha-pw-x3"
+            },
+            {
+              id: "pw-x",
+              label: "option.yamaha-connector.pw-x",
+              image: "images/yamaha-pw-x-connectors.jpg",
+              imageFit: "contain",
+              imageZoom: false,
+              hideLabel: true,
+              targetMotor: "yamaha-pw-x"
+            }
+          ]
+        }
+      ],
+      results: []
     },
     {
       id: "giant-pro",
