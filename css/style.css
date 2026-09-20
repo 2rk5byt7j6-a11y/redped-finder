@@ -405,6 +405,11 @@ select:focus-visible {
   margin-top: 12px;
 }
 
+.choice-card.image-contain.image-medium:not(.is-featured) img {
+  width: min(100%, 260px);
+  justify-self: start;
+}
+
 .choice-card.no-image-zoom img {
   cursor: pointer;
 }

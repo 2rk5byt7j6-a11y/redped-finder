@@ -158,7 +158,7 @@
       : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}${type === "manufacturer" && item.image ? " logo-card" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageSize === "medium" ? " image-medium" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}${type === "manufacturer" && item.image ? " logo-card" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">
@@ -192,7 +192,7 @@
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     return `
       <div class="step">
-        ${stepHeading("step.motor.eyebrow", "step.motor.title", "step.motor.lead")}
+        ${state.manufacturer === "bosch" ? "" : stepHeading("step.motor.eyebrow", "step.motor.title", "step.motor.lead")}
         <div class="card-grid motor-grid">
           ${motors.map((motor) => card(motor, "motor")).join("")}
         </div>

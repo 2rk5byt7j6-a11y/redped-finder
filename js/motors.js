@@ -61,13 +61,14 @@ window.FINDER_DATA = {
       label: "motor.bosch-smart",
       note: "motor.bosch-smart.note",
       image: "images/bosch-smart-connectors.jpg",
-      featured: true,
+      imageFit: "contain",
+      imageSize: "medium",
+      imageZoom: false,
       order: 2,
       questions: [
         {
           id: "magnet",
           title: "question.magnet.title",
-          help: "question.magnet.help",
           options: [
             {
               id: "spoke",
@@ -193,7 +194,9 @@ window.FINDER_DATA = {
       label: "motor.bosch-smart-gen5",
       note: "motor.bosch-smart-gen5.note",
       image: "images/bosch-gen5-connectors.jpg",
-      featured: true,
+      imageFit: "contain",
+      imageSize: "medium",
+      imageZoom: false,
       order: 3,
       result: {
         compatible: false,
@@ -207,7 +210,9 @@ window.FINDER_DATA = {
       label: "motor.bosch-gen2-gen4",
       note: "motor.bosch-gen2-gen4.note",
       image: "images/bosch-bes2-connectors.jpg",
-      featured: true,
+      imageFit: "contain",
+      imageSize: "medium",
+      imageZoom: false,
       order: 1,
       result: {
         compatible: true,
