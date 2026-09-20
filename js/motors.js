@@ -347,7 +347,6 @@ window.FINDER_DATA = {
       id: "shimano-unknown",
       manufacturer: "shimano",
       label: "motor.shimano-unknown",
-      note: "motor.shimano-unknown.note",
       order: 9,
       result: {
         compatible: false,
@@ -359,7 +358,6 @@ window.FINDER_DATA = {
       id: "shimano-other",
       manufacturer: "shimano",
       label: "motor.shimano-other",
-      note: "motor.shimano-other.note",
       order: 10,
       result: {
         compatible: false,
