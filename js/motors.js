@@ -337,7 +337,7 @@ window.FINDER_DATA = {
       result: {
         compatible: true,
         product: {
-          name: "product.shimano-ep5.title",
+          name: "product.shimano-ep8.title",
           image: "images/redped-2s-shimano-ep8.png",
           url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801"
         }
