@@ -1,9 +1,33 @@
 window.FINDER_DATA = {
   manufacturers: [
-    { id: "bosch", label: "manufacturer.bosch", mark: "B" },
-    { id: "shimano", label: "manufacturer.shimano", mark: "S" },
-    { id: "yamaha", label: "manufacturer.yamaha", mark: "Y" },
-    { id: "giant", label: "manufacturer.giant", mark: "G" },
+    {
+      id: "bosch",
+      label: "manufacturer.bosch",
+      image: "images/manufacturers/bosch.svg",
+      imageFit: "small-contain",
+      imageZoom: false
+    },
+    {
+      id: "shimano",
+      label: "manufacturer.shimano",
+      image: "images/manufacturers/shimano.svg",
+      imageFit: "small-contain",
+      imageZoom: false
+    },
+    {
+      id: "yamaha",
+      label: "manufacturer.yamaha",
+      image: "images/manufacturers/yamaha.svg",
+      imageFit: "small-contain",
+      imageZoom: false
+    },
+    {
+      id: "giant",
+      label: "manufacturer.giant",
+      image: "images/manufacturers/giant.svg",
+      imageFit: "small-contain",
+      imageZoom: false
+    },
     {
       id: "unknown",
       label: "manufacturer.unknown",

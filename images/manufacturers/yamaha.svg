@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title">
+  <title id="title">Yamaha</title>
+  <rect width="320" height="180" rx="24" fill="#faf3f6"/>
+  <circle cx="72" cy="90" r="37" fill="none" stroke="#7b163c" stroke-width="6"/>
+  <path d="M72 56v68M43 107l58-34M43 73l58 34" stroke="#7b163c" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="72" cy="90" r="9" fill="#faf3f6" stroke="#7b163c" stroke-width="5"/>
+  <text x="126" y="103" fill="#391022" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="2">YAMAHA</text>
+</svg>

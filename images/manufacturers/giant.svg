@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title">
+  <title id="title">Giant</title>
+  <rect width="320" height="180" rx="24" fill="#f3f3fb"/>
+  <path d="M72 51a39 39 0 1 0 36 54H76V85h58v8a62 62 0 1 1-15-41L100 69A38 38 0 0 0 72 51z" fill="#29295c"/>
+  <text x="151" y="104" fill="#29295c" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="800" letter-spacing="2">GIANT</text>
+</svg>

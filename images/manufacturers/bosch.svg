@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title">
+  <title id="title">Bosch</title>
+  <rect width="320" height="180" rx="24" fill="#f7f8f8"/>
+  <circle cx="72" cy="90" r="35" fill="none" stroke="#d71920" stroke-width="9"/>
+  <path d="M56 66v48m32-48v48M56 90h32" fill="none" stroke="#22282b" stroke-width="9" stroke-linecap="round"/>
+  <text x="125" y="104" fill="#22282b" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" letter-spacing="1">BOSCH</text>
+</svg>
