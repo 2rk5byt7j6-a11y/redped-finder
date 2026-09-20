@@ -254,10 +254,8 @@ window.FINDER_DATA = {
         compatible: true,
         product: {
           name: "product.shimano-ep6.title",
-          description: "product.shimano-ep6.description",
           image: "images/redped-2s-shimano-ep801-ep6.png",
-          url: "https://redped.de/products/redped-2s-fur-shimano-ep6-ep801-tuning-modul-e-bike",
-          warnings: [{ text: "product.shimano-ep6.warning" }]
+          url: "https://redped.de/products/redped-2s-fur-shimano-ep6-ep801-tuning-modul-e-bike"
         }
       }
     },
