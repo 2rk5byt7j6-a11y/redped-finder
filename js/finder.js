@@ -17,8 +17,12 @@
   let depth = history.state?.finderDepth || 0;
 
   function detectLanguage() {
-    const requested = new URLSearchParams(location.search).get("lang")?.toLowerCase();
-    if (requested && translations.supportedLanguages[requested]) return requested;
+    const params = new URLSearchParams(window.location.search);
+    const requestedLanguage = params.get("lang");
+    if (requestedLanguage) {
+      const language = requestedLanguage.toLowerCase().split("-")[0];
+      return translations.supportedLanguages[language] ? language : "en";
+    }
     const browserLanguage = navigator.language?.split("-")[0].toLowerCase();
     return translations.supportedLanguages[browserLanguage] ? browserLanguage : "en";
   }
