@@ -296,8 +296,8 @@ window.FINDER_DATA = {
           product: {
             name: "product.shimano-ep8.title",
             description: "product.shimano-ep8.description",
-            image: "images/redped-shimano.svg",
-            url: "https://www.ebiketuningshop.com/products/redped-2s-fuer-shimano-ep8",
+            image: "images/redped-2s-shimano-ep8.png",
+            url: "https://redped.de/products/redped-2s-fur-shimano-ep8-tuning-ep800-e-bike-nicht-ep6-ep801",
             warnings: [{ text: "product.shimano-ep8.warning" }]
           }
         }
