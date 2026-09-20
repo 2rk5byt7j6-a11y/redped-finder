@@ -250,7 +250,16 @@ window.FINDER_DATA = {
       imageFit: "contain",
       imageZoom: false,
       order: 2,
-      questionSet: "shimano-ep6"
+      result: {
+        compatible: true,
+        product: {
+          name: "product.shimano-ep6.title",
+          description: "product.shimano-ep6.description",
+          image: "images/redped-2s-shimano-ep801-ep6.png",
+          url: "https://redped.de/products/redped-2s-fur-shimano-ep6-ep801-tuning-modul-e-bike",
+          warnings: [{ text: "product.shimano-ep6.warning" }]
+        }
+      }
     },
     {
       id: "shimano-ep8-ep5",
