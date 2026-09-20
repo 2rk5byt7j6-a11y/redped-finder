@@ -236,7 +236,11 @@
         <div class="result-card">
           ${resultImage ? `
             <div class="result-visual">
-              <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">
+              ${product?.url ? `
+                <a href="${escapeHtml(product.url)}" target="_blank" rel="noopener">
+                  <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">
+                </a>` : `
+                <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">`}
             </div>` : ""}
           <div class="result-copy">
             <div class="status${compatible ? "" : " incompatible"}">
@@ -404,7 +408,7 @@
   }
 
   content.addEventListener("click", (event) => {
-    const zoomImage = event.target.closest(".choice-card:not(.no-image-zoom) img, .result-visual img");
+    const zoomImage = event.target.closest(".choice-card:not(.no-image-zoom) img, .result-visual > img");
     if (zoomImage) return openImage(zoomImage);
 
     const choice = event.target.closest("[data-choice-type]");
