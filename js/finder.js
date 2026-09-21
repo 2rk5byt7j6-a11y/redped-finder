@@ -476,10 +476,22 @@
 
   function requestParentScrollIntoView() {
     if (!isEmbedded()) return;
-    window.parent.postMessage(
-      { source: "redped-finder", type: "scroll-into-view" },
-      "*"
-    );
+
+    // Height first, then scroll — otherwise a tall motor list shrinks after
+    // scroll and the shop page ends up too far up.
+    reportEmbedHeight.lastHeight = 0;
+    window.requestAnimationFrame(() => {
+      const height = contentHeight();
+      reportEmbedHeight.lastHeight = height;
+      window.parent.postMessage(
+        { source: "redped-finder", type: "height", height },
+        "*"
+      );
+      window.parent.postMessage(
+        { source: "redped-finder", type: "scroll-into-view" },
+        "*"
+      );
+    });
   }
 
   function setupEmbedHeight() {
