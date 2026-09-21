@@ -324,8 +324,6 @@
     else if (state.view === "motor") content.innerHTML = renderMotors();
     else if (state.view === "result") content.innerHTML = renderResult(matchingResult() || data.fallbackResult);
     else content.innerHTML = renderQuestion();
-
-    reportEmbedHeight();
   }
 
   function selectManufacturer(id) {
@@ -472,10 +470,10 @@
 
     const styles = getComputedStyle(shell);
     const marginBottom = Number.parseFloat(styles.marginBottom) || 0;
-    const rect = shell.getBoundingClientRect();
-    const fromRect = Math.ceil(rect.top + window.scrollY + rect.height + marginBottom + 8);
-    const fromOffset = Math.ceil(shell.offsetTop + shell.offsetHeight + marginBottom + 8);
-    return Math.max(1, fromRect, fromOffset);
+    return Math.max(
+      1,
+      Math.ceil(shell.offsetTop + Math.max(shell.offsetHeight, shell.scrollHeight) + marginBottom + 8)
+    );
   }
 
   function progressAnchorTop() {
@@ -486,59 +484,76 @@
     return Math.max(0, Math.round(anchor.getBoundingClientRect().top + window.scrollY));
   }
 
+  function waitForContentImages() {
+    const images = [...(content?.querySelectorAll("img") || [])];
+    if (!images.length) return Promise.resolve();
+
+    return Promise.all(images.map((image) => {
+      if (image.complete && image.naturalHeight > 0) return Promise.resolve();
+      return new Promise((resolve) => {
+        const finish = () => resolve();
+        image.addEventListener("load", finish, { once: true });
+        image.addEventListener("error", finish, { once: true });
+        window.setTimeout(finish, 2000);
+      });
+    }));
+  }
+
   let embedScrollLock = false;
+  let embedScrollGeneration = 0;
+
+  function postEmbedHeight(height) {
+    if (height === reportEmbedHeight.lastHeight) return;
+    reportEmbedHeight.lastHeight = height;
+    window.parent.postMessage(
+      { source: "redped-finder", type: "height", height },
+      "*"
+    );
+  }
 
   function reportEmbedHeight() {
     if (!isEmbedded() || embedScrollLock) return;
     window.setTimeout(() => {
       if (embedScrollLock) return;
-      const height = contentHeight();
-      if (height === reportEmbedHeight.lastHeight) return;
-      reportEmbedHeight.lastHeight = height;
-      window.parent.postMessage(
-        { source: "redped-finder", type: "height", height },
-        "*"
-      );
+      postEmbedHeight(contentHeight());
     }, 0);
   }
 
   function requestParentScrollIntoView() {
     if (!isEmbedded()) return;
 
-    // Reset iframe scroll instantly so the progress bar offset is stable.
+    const generation = ++embedScrollGeneration;
     window.scrollTo(0, 0);
-
-    // Block ResizeObserver height chatter until the step scroll message is sent.
     embedScrollLock = true;
     reportEmbedHeight.lastHeight = 0;
 
-    // Prefer setTimeout over rAF: when the user picks an option near the bottom
-    // of a tall iframe, most of the frame is off-screen and rAF can be delayed
-    // or skipped, so the parent never receives scroll-into-view.
-    window.setTimeout(() => {
-      const height = contentHeight();
-      const top = progressAnchorTop();
-      reportEmbedHeight.lastHeight = height;
-
-      window.parent.postMessage(
-        {
-          source: "redped-finder",
-          type: "scroll-into-view",
-          top,
-          height,
-          gap: 12
-        },
-        "*"
-      );
-
+    waitForContentImages().then(() => {
+      if (generation !== embedScrollGeneration) return;
       window.setTimeout(() => {
+        if (generation !== embedScrollGeneration) return;
+
+        const height = contentHeight();
+        const top = progressAnchorTop();
+        reportEmbedHeight.lastHeight = height;
+
+        window.parent.postMessage(
+          {
+            source: "redped-finder",
+            type: "scroll-into-view",
+            top,
+            height,
+            gap: 12
+          },
+          "*"
+        );
+
         embedScrollLock = false;
-        // Images may finish after the first measure — push follow-up heights.
-        reportEmbedHeight();
-        window.setTimeout(reportEmbedHeight, 250);
-        window.setTimeout(reportEmbedHeight, 800);
-      }, 50);
-    }, 0);
+        window.setTimeout(() => {
+          if (generation !== embedScrollGeneration) return;
+          reportEmbedHeight();
+        }, 250);
+      }, 0);
+    });
   }
 
   function setupEmbedHeight() {

@@ -47,7 +47,7 @@ html.is-embedded,
 html.is-embedded body {
   min-height: 0;
   height: auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 html.is-embedded .finder-shell {
