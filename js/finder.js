@@ -81,6 +81,14 @@
     return `${url.pathname}?${url.searchParams.toString()}${url.hash}`;
   }
 
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function scrollBehavior() {
+    return prefersReducedMotion() ? "auto" : "smooth";
+  }
+
   function saveState(nextState, mode = "push") {
     state = nextState;
     if (mode === "push") depth += 1;
@@ -90,8 +98,11 @@
       stateUrl(state)
     );
     render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    requestParentScrollIntoView();
+    if (isEmbedded()) {
+      requestParentScrollIntoView();
+    } else {
+      window.scrollTo({ top: 0, behavior: scrollBehavior() });
+    }
   }
 
   function getMotor() {
@@ -440,7 +451,11 @@
     state = readStateFromUrl();
     depth = event.state?.finderDepth || 0;
     render();
-    requestParentScrollIntoView();
+    if (isEmbedded()) {
+      requestParentScrollIntoView();
+    } else {
+      window.scrollTo({ top: 0, behavior: scrollBehavior() });
+    }
   });
 
   function isEmbedded() {
@@ -461,9 +476,20 @@
     return Math.max(1, Math.ceil(rect.top + window.scrollY + rect.height + marginBottom + 8));
   }
 
+  function progressAnchorTop() {
+    const progress = document.querySelector(".progress");
+    const shell = document.querySelector(".finder-shell");
+    const anchor = progress || shell;
+    if (!anchor) return 0;
+    return Math.max(0, Math.round(anchor.getBoundingClientRect().top + window.scrollY));
+  }
+
+  let embedScrollLock = false;
+
   function reportEmbedHeight() {
-    if (!isEmbedded()) return;
+    if (!isEmbedded() || embedScrollLock) return;
     window.requestAnimationFrame(() => {
+      if (embedScrollLock) return;
       const height = contentHeight();
       if (height === reportEmbedHeight.lastHeight) return;
       reportEmbedHeight.lastHeight = height;
@@ -477,21 +503,36 @@
   function requestParentScrollIntoView() {
     if (!isEmbedded()) return;
 
-    // Height first, then scroll — otherwise a tall motor list shrinks after
-    // scroll and the shop page ends up too far up.
+    // Reset iframe scroll instantly so the progress bar offset is stable.
+    window.scrollTo(0, 0);
+
+    // Block ResizeObserver height chatter until the step scroll message is sent.
+    embedScrollLock = true;
     reportEmbedHeight.lastHeight = 0;
-    window.requestAnimationFrame(() => {
+
+    // Prefer setTimeout over rAF: when the user picks an option near the bottom
+    // of a tall iframe, most of the frame is off-screen and rAF can be delayed
+    // or skipped, so the parent never receives scroll-into-view.
+    window.setTimeout(() => {
       const height = contentHeight();
+      const top = progressAnchorTop();
       reportEmbedHeight.lastHeight = height;
+
       window.parent.postMessage(
-        { source: "redped-finder", type: "height", height },
+        {
+          source: "redped-finder",
+          type: "scroll-into-view",
+          top,
+          height,
+          gap: 12
+        },
         "*"
       );
-      window.parent.postMessage(
-        { source: "redped-finder", type: "scroll-into-view" },
-        "*"
-      );
-    });
+
+      window.setTimeout(() => {
+        embedScrollLock = false;
+      }, 50);
+    }, 0);
   }
 
   function setupEmbedHeight() {
