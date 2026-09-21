@@ -91,6 +91,7 @@
     );
     render();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    requestParentScrollIntoView();
   }
 
   function getMotor() {
@@ -439,6 +440,7 @@
     state = readStateFromUrl();
     depth = event.state?.finderDepth || 0;
     render();
+    requestParentScrollIntoView();
   });
 
   function isEmbedded() {
@@ -470,6 +472,14 @@
         "*"
       );
     });
+  }
+
+  function requestParentScrollIntoView() {
+    if (!isEmbedded()) return;
+    window.parent.postMessage(
+      { source: "redped-finder", type: "scroll-into-view" },
+      "*"
+    );
   }
 
   function setupEmbedHeight() {
