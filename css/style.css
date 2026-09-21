@@ -43,6 +43,21 @@ body {
   line-height: 1.8;
 }
 
+html.is-embedded,
+html.is-embedded body {
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+html.is-embedded .finder-shell {
+  margin-bottom: 8px;
+}
+
+html.is-embedded .finder-panel {
+  min-height: 0;
+}
+
 button,
 select {
   color: inherit;

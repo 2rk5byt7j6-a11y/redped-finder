@@ -312,6 +312,8 @@
     else if (state.view === "motor") content.innerHTML = renderMotors();
     else if (state.view === "result") content.innerHTML = renderResult(matchingResult() || data.fallbackResult);
     else content.innerHTML = renderQuestion();
+
+    reportEmbedHeight();
   }
 
   function selectManufacturer(id) {
@@ -439,7 +441,68 @@
     render();
   });
 
+  function isEmbedded() {
+    try {
+      return window.parent !== window;
+    } catch (error) {
+      return true;
+    }
+  }
+
+  function contentHeight() {
+    const shell = document.querySelector(".finder-shell");
+    if (!shell) return 1;
+
+    const styles = getComputedStyle(shell);
+    const marginBottom = Number.parseFloat(styles.marginBottom) || 0;
+    const rect = shell.getBoundingClientRect();
+    return Math.max(1, Math.ceil(rect.top + window.scrollY + rect.height + marginBottom + 8));
+  }
+
+  function reportEmbedHeight() {
+    if (!isEmbedded()) return;
+    window.requestAnimationFrame(() => {
+      const height = contentHeight();
+      if (height === reportEmbedHeight.lastHeight) return;
+      reportEmbedHeight.lastHeight = height;
+      window.parent.postMessage(
+        { source: "redped-finder", type: "height", height },
+        "*"
+      );
+    });
+  }
+
+  function setupEmbedHeight() {
+    if (!isEmbedded()) return;
+
+    document.documentElement.classList.add("is-embedded");
+    reportEmbedHeight.lastHeight = 0;
+
+    const observer = new ResizeObserver(() => reportEmbedHeight());
+    observer.observe(content);
+    const shell = document.querySelector(".finder-shell");
+    if (shell) observer.observe(shell);
+
+    window.addEventListener("resize", reportEmbedHeight);
+    window.visualViewport?.addEventListener("resize", reportEmbedHeight);
+    window.addEventListener("load", reportEmbedHeight);
+    document.fonts?.ready.then(reportEmbedHeight);
+    imageDialog?.addEventListener("toggle", reportEmbedHeight);
+
+    content.addEventListener("load", (event) => {
+      if (event.target?.tagName === "IMG") reportEmbedHeight();
+    }, true);
+
+    window.addEventListener("message", (event) => {
+      if (event.source !== window.parent) return;
+      if (event.data?.source !== "redped-shop" || event.data?.type !== "request-height") return;
+      reportEmbedHeight.lastHeight = 0;
+      reportEmbedHeight();
+    });
+  }
+
   setupLanguageSelect();
+  setupEmbedHeight();
   history.replaceState({ finderDepth: depth }, "", stateUrl(state));
   render();
 })();
