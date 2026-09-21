@@ -211,7 +211,7 @@
       <div class="step">
         ${stepHeading(null, question.title, question.help)}
         ${question.image ? `
-          <div class="question-visual">
+          <div class="question-visual${question.imageSize === "medium" ? " image-medium" : ""}${question.imageSize === "small" ? " image-small" : ""}">
             <img src="${escapeHtml(question.image)}" alt="${escapeHtml(t(question.title))}">
           </div>` : ""}
         <div class="card-grid">

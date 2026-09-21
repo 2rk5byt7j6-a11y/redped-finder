@@ -121,6 +121,7 @@ window.FINDER_DATA = {
           title: "question.bosch-speed-sensor.title",
           help: "question.bosch-speed-sensor.help",
           image: "images/bosch-smart-speed-sensor-connector.webp",
+          imageSize: "medium",
           visibleWhen: { answer: "magnet", equals: "unknown" },
           options: [
             { id: "yes", label: "option.yes", mark: "✓" },
@@ -132,6 +133,7 @@ window.FINDER_DATA = {
           title: "question.connect.title",
           help: "question.connect.help",
           image: "images/bosch-connect-module.webp",
+          imageSize: "medium",
           options: [
             { id: "yes", label: "option.yes", mark: "✓" },
             { id: "no", label: "option.no", mark: "—" },

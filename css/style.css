@@ -248,6 +248,14 @@ h1 {
   background: white;
 }
 
+.question-visual.image-medium img {
+  width: min(100%, 260px);
+}
+
+.question-visual.image-small img {
+  width: min(100%, 140px);
+}
+
 .choice-card {
   position: relative;
   display: flex;
