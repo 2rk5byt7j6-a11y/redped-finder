@@ -167,7 +167,7 @@
         ? state.motor === item.id
         : state.answers[currentQuestion()?.id] === item.id;
     const media = item.image
-      ? `<img src="${escapeHtml(item.image)}" alt="" loading="lazy">`
+      ? `<img src="${escapeHtml(item.image)}" alt="" loading="${isEmbedded() ? "eager" : "lazy"}" decoding="async">`
       : `<span class="choice-icon" aria-hidden="true">${escapeHtml(item.mark || "•")}</span>`;
     const note = item.note
       ? `<small>${escapeHtml(t(item.note))}</small>`
@@ -473,7 +473,9 @@
     const styles = getComputedStyle(shell);
     const marginBottom = Number.parseFloat(styles.marginBottom) || 0;
     const rect = shell.getBoundingClientRect();
-    return Math.max(1, Math.ceil(rect.top + window.scrollY + rect.height + marginBottom + 8));
+    const fromRect = Math.ceil(rect.top + window.scrollY + rect.height + marginBottom + 8);
+    const fromOffset = Math.ceil(shell.offsetTop + shell.offsetHeight + marginBottom + 8);
+    return Math.max(1, fromRect, fromOffset);
   }
 
   function progressAnchorTop() {
@@ -488,7 +490,7 @@
 
   function reportEmbedHeight() {
     if (!isEmbedded() || embedScrollLock) return;
-    window.requestAnimationFrame(() => {
+    window.setTimeout(() => {
       if (embedScrollLock) return;
       const height = contentHeight();
       if (height === reportEmbedHeight.lastHeight) return;
@@ -497,7 +499,7 @@
         { source: "redped-finder", type: "height", height },
         "*"
       );
-    });
+    }, 0);
   }
 
   function requestParentScrollIntoView() {
@@ -531,6 +533,10 @@
 
       window.setTimeout(() => {
         embedScrollLock = false;
+        // Images may finish after the first measure — push follow-up heights.
+        reportEmbedHeight();
+        window.setTimeout(reportEmbedHeight, 250);
+        window.setTimeout(reportEmbedHeight, 800);
       }, 50);
     }, 0);
   }
