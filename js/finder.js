@@ -163,7 +163,7 @@
       : "";
 
     return `
-      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageSize === "medium" ? " image-medium" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}${type === "manufacturer" && item.image ? " logo-card" : ""}" type="button"
+      <button class="choice-card${selected ? " is-selected" : ""}${item.featured ? " is-featured" : ""}${item.imageFit === "contain" ? " image-contain" : ""}${item.imageFit === "small-contain" ? " image-small-contain" : ""}${item.imageSize === "medium" ? " image-medium" : ""}${item.imageSize === "small" ? " image-small" : ""}${item.imageZoom === false ? " no-image-zoom" : ""}${item.hideLabel ? " hide-label" : ""}${type === "manufacturer" && item.image ? " logo-card" : ""}" type="button"
         data-choice-type="${type}" data-choice-id="${escapeHtml(item.id)}">
         ${media}
         <span class="choice-copy">

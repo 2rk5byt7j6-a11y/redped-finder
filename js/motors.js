@@ -240,6 +240,7 @@ window.FINDER_DATA = {
               label: "option.bosch-system.bes2",
               image: "images/bosch-bes2-charging-plug.webp",
               imageFit: "contain",
+              imageSize: "small",
               imageZoom: false,
               targetMotor: "bosch-gen2-gen4"
             },
@@ -248,6 +249,7 @@ window.FINDER_DATA = {
               label: "option.bosch-system.bes3",
               image: "images/bosch-bes3-charging-plug.webp",
               imageFit: "contain",
+              imageSize: "small",
               imageZoom: false
             }
           ]

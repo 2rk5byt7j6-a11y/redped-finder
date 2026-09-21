@@ -389,6 +389,11 @@ select:focus-visible {
   justify-self: start;
 }
 
+.choice-card.image-contain.image-small:not(.is-featured) img {
+  width: min(100%, 140px);
+  justify-self: start;
+}
+
 .choice-card.no-image-zoom img {
   cursor: pointer;
 }
