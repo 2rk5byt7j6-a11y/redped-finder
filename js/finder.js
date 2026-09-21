@@ -15,6 +15,7 @@
   let language = detectLanguage();
   let state = readStateFromUrl();
   let depth = history.state?.finderDepth || 0;
+  let analyticsRun = createAnalyticsRun();
 
   function detectLanguage() {
     const params = new URLSearchParams(window.location.search);
@@ -38,6 +39,110 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function createAnalyticsRun() {
+    return {
+      started: false,
+      stepNumber: 0,
+      resultSignatures: new Set()
+    };
+  }
+
+  function productAnalyticsValue(product) {
+    if (!product) return "";
+    try {
+      return new URL(product.url, window.location.origin)
+        .pathname
+        .split("/")
+        .filter(Boolean)
+        .at(-1) || product.name;
+    } catch (error) {
+      return product.name || "";
+    }
+  }
+
+  function answerAnalyticsContext(answers) {
+    const context = {};
+    if (answers.boschSystem) context.motor_family = answers.boschSystem;
+    if (answers.port) context.connector = answers.port;
+    if (answers.speedSensorConnector) context.sensor = answers.speedSensorConnector;
+    if (answers.magnet) {
+      context.magnet_type = answers.magnet;
+      if (answers.magnet === "abs") context.abs = true;
+    }
+    if (answers.abs === "yes") context.abs = true;
+    if (answers.abs === "no") context.abs = false;
+    if (answers.display) context.display = answers.display;
+    return context;
+  }
+
+  function analyticsContext(nextState = state) {
+    return {
+      ...(nextState.manufacturer ? { brand: nextState.manufacturer } : {}),
+      ...(nextState.motor ? { motor: nextState.motor } : {}),
+      ...answerAnalyticsContext(nextState.answers || {})
+    };
+  }
+
+  function trackSelection(stepName, selection, nextState) {
+    if (typeof window.trackFinderEvent !== "function") return;
+
+    const context = analyticsContext(nextState);
+    if (!analyticsRun.started) {
+      analyticsRun.started = true;
+      analyticsRun.stepNumber = 1;
+      window.trackFinderEvent("finder_start", context);
+      return;
+    }
+
+    analyticsRun.stepNumber += 1;
+    window.trackFinderEvent("finder_step", {
+      ...context,
+      step_number: analyticsRun.stepNumber,
+      step_name: stepName,
+      selection
+    });
+  }
+
+  function resultSignature(result) {
+    return JSON.stringify({
+      manufacturer: state.manufacturer,
+      motor: state.motor,
+      answers: Object.entries(state.answers || {}).sort(([a], [b]) => a.localeCompare(b)),
+      compatible: Boolean(result?.compatible && result.product),
+      result: result?.product?.name || result?.title || result?.reason || "not_compatible"
+    });
+  }
+
+  function trackResult(result) {
+    if (typeof window.trackFinderEvent !== "function") return;
+
+    const signature = resultSignature(result);
+    if (analyticsRun.resultSignatures.has(signature)) return;
+    analyticsRun.resultSignatures.add(signature);
+
+    const compatible = Boolean(result?.compatible && result.product);
+    const product = compatible ? productAnalyticsValue(result.product) : "";
+    window.trackFinderEvent("finder_result", {
+      ...analyticsContext(),
+      result: compatible ? product : "not_compatible",
+      compatible,
+      ...(compatible ? { result_count: 1 } : {})
+    });
+  }
+
+  function trackProductClick() {
+    const result = matchingResult();
+    const product = result?.product;
+    if (!product || typeof window.trackFinderEvent !== "function") return;
+
+    window.trackFinderEvent("finder_product_click", {
+      ...analyticsContext(),
+      product: productAnalyticsValue(product),
+      destination: "product_page",
+      product_url: product.url
+    });
   }
 
   function openImage(image) {
@@ -252,7 +357,7 @@
           ${resultImage ? `
             <div class="result-visual">
               ${product?.url ? `
-                <a href="${escapeHtml(product.url)}" target="_blank" rel="noopener">
+                <a href="${escapeHtml(product.url)}" target="_blank" rel="noopener" data-product-link>
                   <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">
                 </a>` : `
                 <img src="${escapeHtml(resultImage)}" alt="${escapeHtml(t(resultImageAlt || "result.unsupported.title"))}">`}
@@ -270,7 +375,7 @@
               </ul>` : ""}
             <div class="actions">
               ${action ? `
-                <a class="primary-button" href="${escapeHtml(action.url)}" target="_blank" rel="noopener">
+                <a class="primary-button" href="${escapeHtml(action.url)}" target="_blank" rel="noopener"${product?.url ? " data-product-link" : ""}>
                   ${escapeHtml(t(action.label))}
                 </a>` : ""}
               <button class="secondary-button" type="button" data-action="restart">
@@ -322,38 +427,59 @@
 
     if (state.view === "manufacturer") content.innerHTML = renderManufacturer();
     else if (state.view === "motor") content.innerHTML = renderMotors();
-    else if (state.view === "result") content.innerHTML = renderResult(matchingResult() || data.fallbackResult);
-    else content.innerHTML = renderQuestion();
+    else if (state.view === "result") {
+      const result = matchingResult() || data.fallbackResult;
+      content.innerHTML = renderResult(result);
+      trackResult(result);
+    } else content.innerHTML = renderQuestion();
   }
 
   function selectManufacturer(id) {
     const manufacturer = data.manufacturers.find((item) => item.id === id);
     if (!manufacturer) return;
-    saveState({
+    const nextState = {
       manufacturer: id,
       motor: null,
       answers: {},
       view: manufacturer.result ? "result" : "motor"
-    });
+    };
+    trackSelection("manufacturer", id, nextState);
+    saveState(nextState);
   }
 
   function selectMotor(id) {
     const motor = data.motors.find((item) => item.id === id);
     if (!motor) return;
     const firstQuestion = getMotorFlow(motor).questions?.[0];
-    saveState({
+    const nextState = {
       manufacturer: motor.manufacturer,
       motor: id,
       answers: {},
       view: motor.unavailable || !firstQuestion ? "result" : `question:${firstQuestion.id}`
-    });
+    };
+    trackSelection("motor", id, nextState);
+    saveState(nextState);
   }
 
   function selectAnswer(id) {
     const question = currentQuestion();
     if (!question) return;
     const option = question.options.find((item) => item.id === id);
-    if (option?.targetMotor) return selectMotor(option.targetMotor);
+    if (!option) return;
+
+    if (option.targetMotor) {
+      const motor = data.motors.find((item) => item.id === option.targetMotor);
+      if (!motor) return;
+      const firstQuestion = getMotorFlow(motor).questions?.[0];
+      const nextState = {
+        manufacturer: motor.manufacturer,
+        motor: motor.id,
+        answers: {},
+        view: motor.unavailable || !firstQuestion ? "result" : `question:${firstQuestion.id}`
+      };
+      trackSelection(question.id, id, nextState);
+      return saveState(nextState);
+    }
 
     const questions = visibleQuestions();
     const currentIndex = questions.findIndex((item) => item.id === question.id);
@@ -367,10 +493,12 @@
     const result = matchingResult();
     const nextQuestion = visibleQuestions().find((item, index) => index > currentIndex && !answers[item.id]);
 
-    saveState({
+    const nextState = {
       ...state,
       view: result ? "result" : nextQuestion ? `question:${nextQuestion.id}` : "result"
-    });
+    };
+    trackSelection(question.id, id, nextState);
+    saveState(nextState);
   }
 
   function previousState() {
@@ -407,6 +535,7 @@
   }
 
   function restart() {
+    analyticsRun = createAnalyticsRun();
     saveState({ manufacturer: null, motor: null, answers: {}, view: "manufacturer" });
   }
 
@@ -424,6 +553,9 @@
   }
 
   content.addEventListener("click", (event) => {
+    const productLink = event.target.closest("[data-product-link]");
+    if (productLink) trackProductClick();
+
     const zoomImage = event.target.closest(".choice-card:not(.no-image-zoom) img, .result-visual > img");
     if (zoomImage) return openImage(zoomImage);
 
@@ -589,4 +721,5 @@
   setupEmbedHeight();
   history.replaceState({ finderDepth: depth }, "", stateUrl(state));
   render();
+  window.RedPedFinderAnalytics?.markReady();
 })();
